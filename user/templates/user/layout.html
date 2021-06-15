@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>
     {% block title %}
+
     {% endblock %}
     </title>
     <!-- Favicon-->
@@ -30,6 +31,8 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{% static 'css/themes/all-themes.css'%}" rel="stylesheet" />
+    {% block extra_css %}
+    {% endblock %}
 </head>
 
 <body class="theme-red">
@@ -794,17 +797,17 @@
         </aside>
         <!-- #END# Right Sidebar -->
     </section>
-
     <section class="content">
         <div class="container-fluid">
-            {% block body %}
+             {% block body %}
+
                 <div class="block-header">
                     <h2>BLANK PAGE</h2>
                 </div>
-            {% endblock %}
+             {% endblock %}
+
         </div>
     </section>
-
     <!-- Jquery Core Js -->
     <script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
 
@@ -825,6 +828,8 @@
 
     <!-- Demo Js -->
     <script src="{% static 'js/demo.js'%}"></script>
+    {% block extra_js %}
+    {% endblock %}
 </body>
 
 </html>
