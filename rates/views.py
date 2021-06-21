@@ -5,6 +5,7 @@ from .models import rate
 class NewRateView(CreateView):
     model = rate
     fields = '__all__'
+    template_name = 'nozzel/nozzel_master_form.html'
 #model_form.html
 
 class ListRateView(ListView):
