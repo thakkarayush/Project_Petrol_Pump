@@ -2,7 +2,7 @@ from django.db import models
 
 from django.urls import reverse
 
-
+from django.core.validators import MinValueValidator
 # Create your models here.
 
 class employee(models.Model):
@@ -28,7 +28,7 @@ class employee(models.Model):
     choices = [("Morning", "Morning"), ("Noon", "Noon"),("Night","Night")]
     shifttime = models.CharField(choices=choices,max_length=10)
     workinghours = models.IntegerField()
-    salary = models.IntegerField()
+    salary = models.IntegerField(validators=[MinValueValidator(0,"Value must be greater than 0")])
     bankname = models.CharField(max_length=30)
     bankaccountno = models.IntegerField()
     IFSCcode = models.IntegerField()

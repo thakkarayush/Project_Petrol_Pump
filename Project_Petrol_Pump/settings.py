@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'nozzel',
     'employee',
     'tank',
+    'creditor',
     'crispy_forms',
     'user',
     'django.contrib.admin',
