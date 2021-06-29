@@ -1,0 +1,104 @@
+{% extends "user/layout.html" %}
+{% block body %}
+    <h1> Are you sure you want to delete ?</h1>
+    <form method="post">
+    {% csrf_token %}
+    <div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+
+
+                    </div>
+
+                    <div class="card card-about-me">
+
+                        <div class="body">
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <i class="fa fa-birthday-cake"></i>Date
+                                    </div>
+                                    <div class="content">
+                                        {{ object.date }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">location_on</i>
+                                        creditor id
+                                    </div>
+                                    <div class="content">
+                                        {{ object.creditorid }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        amount
+                                    </div>
+                                    <div class="content">
+                                       {{ object.amount }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        type
+                                    </div>
+                                    <div class="content">
+                                        {{ object.type }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        bank name
+                                    </div>
+                                    <div class="content">
+                                        {{ object.bankname }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        cheque no
+                                    </div>
+                                    <div class="content">
+                                        {{ object.chequeno }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        branch name
+                                    </div>
+                                    <div class="content">
+                                        {{ object.branchname }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        cheque date
+                                    </div>
+                                    <div class="content">
+                                        {{ object.check_date }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        reference id
+                                    </div>
+                                    <div class="content">
+                                        {{ object.reference_id }}
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+        <input type="submit" value="delete" class="btn btn-danger">
+        <a href="{% url 'cpayment-view' %}" class="btn btn-info" >cancel </a>
+    </form>
+{% endblock %}

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'tank',
     'creditor',
     'vehicle',
+    'c_transaction',
+    'c_payment',
     'crispy_forms',
     'user',
     'django.contrib.admin',

@@ -1,0 +1,88 @@
+{% extends "user/layout.html" %}
+{% block body %}
+    <h1> Are you sure you want to delete ?</h1>
+    <form method="post">
+    {% csrf_token %}
+    <div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+
+
+                    </div>
+
+                    <div class="card card-about-me">
+
+                        <div class="body">
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <i class="fa fa-birthday-cake"></i>Date
+                                    </div>
+                                    <div class="content">
+                                        {{ object.date }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">location_on</i>
+                                        vehicle id
+                                    </div>
+                                    <div class="content">
+                                        {{ object.vehicle_id }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        Nozzel Id
+                                    </div>
+                                    <div class="content">
+                                       {{ object.nozzle }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Petrol in liters
+                                    </div>
+                                    <div class="content">
+                                        {{ object.petrolinlit }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Diesel in liters
+                                    </div>
+                                    <div class="content">
+                                        {{ object.dieselinlit }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Petrol Price
+                                    </div>
+                                    <div class="content">
+                                        {{ object.petrolprice }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Diesel Price
+                                    </div>
+                                    <div class="content">
+                                        {{ object.dieselprice }}
+                                    </div>
+                                </li>
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+        <input type="submit" value="delete" class="btn btn-danger">
+        <a href="{% url 'employee-view' %}" class="btn btn-info" >cancel </a>
+    </form>
+{% endblock %}
