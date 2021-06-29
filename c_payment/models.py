@@ -6,7 +6,7 @@ class c_payment(models.Model):
     date=models.DateField()
     creditorid=models.ForeignKey(creditor_master,on_delete=models.CASCADE,related_name="payment")
     amount=models.FloatField()
-    choice=[("paytm","paytm"),("googlepay","googlepay"),("bank","bank"),("phonepay","phonepay")]
+    choice=[("paytm","paytm"),("googlepay","googlepay"),("bank","bank"),("phonepay","phonepay"),("cash","cash")]
     type=models.CharField(max_length=20,choices=choice)
     bankname=models.CharField(max_length=20,blank=True,null=True)
     chequeno=models.FloatField(null=True,blank=True)
