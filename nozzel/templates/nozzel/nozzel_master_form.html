@@ -3,15 +3,16 @@
 {% load crispy_forms_field %}
 {% block extra_css %}
     <!-- Animation Css -->
-    <link href="{% static 'plugins/animate-css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'plugins/animate-css/animate.css'%}" rel="stylesheet" />
+ <!-- Bootstrap Select Css -->
+    <link href="{% static 'plugins/bootstrap-select/css/bootstrap-select.css'%}" rel="stylesheet" />
 
     <!-- Sweet Alert Css -->
-    <link href="{% static 'plugins/sweetalert/sweetalert.css' %}" rel="stylesheet" />
+    <link href="{% static 'plugins/sweetalert/sweetalert.css'%}" rel="stylesheet" />
 
+      <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="{% static 'plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css'%}" rel="stylesheet" />
 
-
-     <!-- Bootstrap Select Css -->
-    <link href="{% static 'plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet' %}" />
 
 {% endblock %}
 {% block body %}
@@ -50,9 +51,9 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                <div  class="form-group form-float">
-                                    <div class="form-line">
-                                        {% crispy_field form.type 'class' 'form-control show-tick' %}
+                                <div class="form-group form-float">
+                                    <label class="form-label">Type</label>
+                                        {% crispy_field form.type %}
 
                                          {% if form.type.errors %}
                                             {% for error in form.type.errors %}
@@ -61,7 +62,7 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
-                                    </div>
+
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
@@ -86,25 +87,43 @@
             <!-- #END# Basic Validation -->
 {% endblock %}
 {% block extra_js %}
+     <!-- Select Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-select/js/bootstrap-select.js'%}"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{% static 'plugins/jquery-slimscroll/jquery.slimscroll.js'%}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{% static 'plugins/node-waves/waves.js'%}"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="{% static 'plugins/autosize/autosize.js'%}"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="{% static 'plugins/momentjs/moment.js'%}"></script>
+
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/admin.js'%}"></script>
+    <script src="{% static 'js/pages/forms/basic-form-elements.js'%}"></script>
+
+    <!-- Demo Js -->
+    <script src="{% static 'js/demo.js'%}"></script>
      <!-- Jquery Validation Plugin Css -->
-    <script src="{% static 'plugins/jquery-validation/jquery.validate.js' %}"></script>
+    <script src="{% static 'plugins/jquery-validation/jquery.validate.js'%}"></script>
 
     <!-- JQuery Steps Plugin Js -->
-    <script src="{% static 'plugins/jquery-steps/jquery.steps.js' %}"></script>
+    <script src="{% static 'plugins/jquery-steps/jquery.steps.js'%}"></script>
 
     <!-- Sweet Alert Plugin Js -->
-    <script src="{% static 'plugins/sweetalert/sweetalert.min.js' %}"></script>
+    <script src="{% static 'plugins/sweetalert/sweetalert.min.js'%}"></script>
 
-    <script src="{% static 'js/pages/forms/form-validation.js' %}"></script>
+    <script src="{% static 'js/pages/forms/form-validation.js'%}"></script>
 
      <!-- Moment Plugin Js -->
-    <script src="{% static 'plugins/momentjs/moment.js' %}"></script>
+    <script src="{% static 'plugins/momentjs/moment.js'%}"></script>
 
-   <!-- Select Plugin Js -->
-    <script src="{% static 'plugins/bootstrap-select/js/bootstrap-select.js' %} "></script>
 
-  <!-- Bootstrap Core Js -->
-    <script src="{% static 'plugins/bootstrap/js/bootstrap.js'%}"></script>
 
 
 {% endblock %}

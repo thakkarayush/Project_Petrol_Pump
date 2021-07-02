@@ -39,7 +39,7 @@ class employee(models.Model):
     document=models.FileField(upload_to='documents')
 
     def __str__(self):
-        return f"employee({self.id})-diesel({self.name})"
+        return f"employee({self.id})-diesel({self.fname})"
 
     def get_absolute_url(self):
         return reverse('employee-view')

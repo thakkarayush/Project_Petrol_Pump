@@ -1,0 +1,118 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block body %}
+<div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+
+
+                    </div>
+
+                    <div class="card card-about-me">
+
+                        <div class="body">
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <i class="fa fa-birthday-cake"></i>Date
+                                    </div>
+                                    <div class="content">
+                                        {{ object.date }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">location_on</i>
+                                        employee id
+                                    </div>
+                                    <div class="content">
+                                        {{ object.employeeid }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        amount
+                                    </div>
+                                    <div class="content">
+                                       {{ object.amount }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        Finalise salary
+                                    </div>
+                                    <div class="content">
+                                       {{ object.finalisesalary }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        type
+                                    </div>
+                                    <div class="content">
+                                        {{ object.type }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        bank name
+                                    </div>
+                                    <div class="content">
+                                        {{ object.bankname }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        cheque no
+                                    </div>
+                                    <div class="content">
+                                        {{ object.chequeno }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        branch name
+                                    </div>
+                                    <div class="content">
+                                        {{ object.branchname }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        cheque date
+                                    </div>
+                                    <div class="content">
+                                        {{ object.cheque_date }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        IFCS code
+                                    </div>
+                                    <div class="content">
+                                       {{ object.IFSC }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        reference id
+                                    </div>
+                                    <div class="content">
+                                        {{ object.reference_id }}
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+{% endblock %}
