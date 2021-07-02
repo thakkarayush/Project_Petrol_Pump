@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'supplierdetail',
     'employeepayment',
     'n_transaction',
+    'calculation',
     'crispy_forms',
     'user',
     'django.contrib.admin',
