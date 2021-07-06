@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView,ListView,UpdateView,DeleteView,DetailView
 from .models import nozzel_master
+from django.http.response import JsonResponse
 # Create your views here.
 class NewNozzelView(CreateView):
     model = nozzel_master
@@ -24,3 +25,6 @@ class DeleteNozzelView(DeleteView):
 class DetailNozzelView(DetailView):
     model = nozzel_master
 
+def type_of_nozzel(request,nid):
+    type=nozzel_master.objects.get(id=nid).type
+    return JsonResponse({"type":type})

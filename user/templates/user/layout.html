@@ -26,6 +26,9 @@
     <!-- Animation Css -->
     <link href="{% static 'plugins/animate-css/animate.css'%}" rel="stylesheet" />
 
+    <!-- Morris Chart Css-->
+    <link href="{% static 'plugins/morrisjs/morris.css' %}" rel="stylesheet" />
+
     <!-- Custom Css -->
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
 
@@ -293,7 +296,7 @@
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{% url 'logout' %}"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="http://127.0.0.1:8000/"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -757,8 +760,29 @@
     <!-- Waves Effect Plugin Js -->
     <script src="{% static 'plugins/node-waves/waves.js'%}"></script>
 
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="{% static 'plugins/jquery-countto/jquery.countTo.js'%}"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="{% static 'plugins/raphael/raphael.min.js'%}"></script>
+    <script src="{% static 'plugins/morrisjs/morris.js'%}"></script>
+
+    <!-- ChartJs -->
+    <script src="{% static 'plugins/chartjs/Chart.bundle.js'%}"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="{% static 'plugins/flot-charts/jquery.flot.js'%}"></script>
+    <script src="{% static 'plugins/flot-charts/jquery.flot.resize.js'%}"></script>
+    <script src="{% static 'plugins/flot-charts/jquery.flot.pie.js'%}"></script>
+    <script src="{% static 'plugins/flot-charts/jquery.flot.categories.js'%}"></script>
+    <script src="{% static 'plugins/flot-charts/jquery.flot.time.js'%}"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="{% static 'plugins/jquery-sparkline/jquery.sparkline.js'%}"></script>
+
     <!-- Custom Js -->
     <script src="{% static 'js/admin.js'%}"></script>
+    <script src="{% static 'js/pages/index.js'%}"></script>
 
     <!-- Demo Js -->
     <script src="{% static 'js/demo.js'%}"></script>

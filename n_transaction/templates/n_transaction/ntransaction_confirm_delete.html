@@ -5,10 +5,7 @@
     {% csrf_token %}
     <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
-
-
                     </div>
-
                     <div class="card card-about-me">
 
                         <div class="body">
@@ -28,127 +25,6 @@
                                     </div>
                                     <div class="content">
                                         {{ object.nozzelid }}
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Total petrol
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totalprice }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Total Diesel
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totaldiesel }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Total petrol Price
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totalpprice }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Total diesel price
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totaldprice }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Petrol before
-                                    </div>
-                                    <div class="content">
-                                        {{ object.petrolbefore }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Petrol after
-                                    </div>
-                                    <div class="content">
-                                        {{ object.petrolafter }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Diesel before
-                                    </div>
-                                    <div class="content">
-                                        {{ object.dieselbefore }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Diesel After
-                                    </div>
-                                    <div class="content">
-                                        {{ object.dieselafter }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        amount
-                                    </div>
-                                    <div class="content">
-                                       {{ object.amount }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        type
-                                    </div>
-                                    <div class="content">
-                                        {{ object.type }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        bank name
-                                    </div>
-                                    <div class="content">
-                                        {{ object.bankname }}
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        branch name
-                                    </div>
-                                    <div class="content">
-                                        {{ object.branchname }}
-                                    </div>
-                                </li>
-
-
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        reference id
-                                    </div>
-                                    <div class="content">
-                                        {{ object.reference_id }}
                                     </div>
                                 </li>
                                 <li>
@@ -190,6 +66,61 @@
                                 <li>
                                     <div class="title">
                                         <i class="material-icons"></i>
+                                        Total petrol
+                                    </div>
+                                    <div class="content">
+                                        {{ object.totalprice }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Total petrol Price
+                                    </div>
+                                    <div class="content">
+                                        {{ object.totalpprice }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Lost Petrol
+                                    </div>
+                                    <div class="content">
+                                        {{ object.lostpetrol }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Lost petrol price
+                                    </div>
+                                    <div class="content">
+                                        {{ object.lostpetrolprice }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Total Diesel
+                                    </div>
+                                    <div class="content">
+                                        {{ object.totaldiesel }}
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Total diesel price
+                                    </div>
+                                    <div class="content">
+                                        {{ object.totaldprice }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
                                         Opening Diesel in lit
                                     </div>
                                     <div class="content">
@@ -208,30 +139,13 @@
                                 <li>
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Lost Petrol
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostpetrol }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
                                         Lost Diesel
                                     </div>
                                     <div class="content">
                                         {{ object.lostdiesel }}
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Lost petrol price
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostpetrolprice }}
-                                    </div>
-                                </li>
+
                                 <li>
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -239,6 +153,80 @@
                                     </div>
                                     <div class="content">
                                         {{ object.lostdieselprice }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        amount
+                                    </div>
+                                    <div class="content">
+                                       {{ object.amount }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Paytm
+                                    </div>
+                                    <div class="content">
+                                        {{ object.paytm }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Googlepay
+                                    </div>
+                                    <div class="content">
+                                        {{ object.googlepay }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Card
+                                    </div>
+                                    <div class="content">
+                                        {{ object.card }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Phonepay
+                                    </div>
+                                    <div class="content">
+                                        {{ object.phonepay }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        Cash
+                                    </div>
+                                    <div class="content">
+                                        {{ object.cash }}
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        bank name
+                                    </div>
+                                    <div class="content">
+                                        {{ object.bankname }}
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        branch name
+                                    </div>
+                                    <div class="content">
+                                        {{ object.branchname }}
                                     </div>
                                 </li>
                                 <li>

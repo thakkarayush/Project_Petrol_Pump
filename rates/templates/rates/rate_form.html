@@ -46,9 +46,10 @@
                             <form id="form_validation" method="POST">
                                 {% csrf_token %}
                                 <div class="form-group form-float">
+                                <label class="form-label">Date </label>
                                     <div class="form-line">
                                         {% crispy_field form.date 'class' 'datepicker' %}
-                                        <label class="form-label">Date </label>
+
                                          {% if form.date.errors %}
                                             {% for error in form.date.errors %}
                                                 <div class="invalid-feedback">
@@ -59,9 +60,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Petrol Price</label>
                                     <div class="form-line">
                                         {% crispy_field form.petrol_price %}
-                                        <label class="form-label">Petrol Price</label>
+
                                          {% if form.petrol_price.errors %}
                                             {% for error in form.petrol_price.errors %}
                                                 <div class="invalid-feedback">
@@ -72,9 +74,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
+                                <label class="form-label">Diesel price</label>
                                     <div class="form-line">
                                         {% crispy_field form.diesel_price %}
-                                        <label class="form-label">Diesel price</label>
+
                                         {% if form.diesel_price.errors %}
                                             {% for error in form.diesel_price.errors %}
                                                 <div class="invalid-feedback">
