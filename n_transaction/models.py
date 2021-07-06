@@ -30,7 +30,7 @@ class ntransaction(models.Model):
     closinglitpetrol=models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
     openinglitdiesel=models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
     closinglitdiesel=models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
-    creditorslipno=models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
+    creditoramount=models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
 
     def __str__(self):
         return f"petrol({self.lostpetrol})-diesel({self.lostdiesel})"

@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import CreateView,ListView,UpdateView,DeleteView,DetailView
 from .models import nozzel_master
 from django.http.response import JsonResponse
+from datetime import datetime
+from django.db.models import Sum
 # Create your views here.
 class NewNozzelView(CreateView):
     model = nozzel_master
@@ -28,3 +30,13 @@ class DetailNozzelView(DetailView):
 def type_of_nozzel(request,nid):
     type=nozzel_master.objects.get(id=nid).type
     return JsonResponse({"type":type})
+
+def get_creditor_lit_by_nozzel(request,nid):
+    noz=nozzel_master.objects.get(id=nid)
+    if noz.type.lower()=='petrol':
+        data=noz.nozzel.filter(date=datetime.utcnow().date()).aggregate(Sum('petrolinlit'))
+
+    else:
+        data=noz.nozzel.filter(date=datetime.utcnow().date()).aggregate(Sum('dieselinlit'))
+
+    return JsonResponse(data)

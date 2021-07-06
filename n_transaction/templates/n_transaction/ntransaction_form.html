@@ -424,12 +424,12 @@
 
 
                                 <div class="form-group form-float">
-                                <label class="form-label">Creditor slipno</label>
+                                <label class="form-label">Creditor Amount</label>
                                     <div class="form-line">
-                                        {% crispy_field form.creditorslipno %}
+                                        {% crispy_field form.creditoramount %}
 
-                                         {% if form.creditorslipno.errors %}
-                                            {% for error in form.creditorslipno.errors %}
+                                         {% if form.creditoramount.errors %}
+                                            {% for error in form.creditoramount.errors %}
                                                 <div class="invalid-feedback">
                                                   {{ error }}
                                                 </div>
@@ -535,6 +535,27 @@
         // hide and show
         document.addEventListener('DOMContentLoaded',function(){
          document.querySelector('#id_nozzelid').onchange=function(){
+
+             fetch(`http://127.0.0.1:8000/nozzel/camount/${this.value}`)
+             .then(response => response.json())
+             .then(data =>{
+                 if(data.dieselinlit__sum != undefined)
+                 {
+                     console.log("inside diesel ");
+                     fetch("http://127.0.0.1:8000/rates/dieselprice/")
+                    .then(response => response.json())
+                    .then(data1 => {
+                        document.querySelector("#id_creditoramount").value = data.dieselinlit__sum*data1.diesel_price;
+                    })
+                 }
+                 else {
+                     fetch("http://127.0.0.1:8000/rates/petrolprice/")
+                    .then(response => response.json())
+                    .then(data1 => {
+                        document.querySelector("#id_creditoramount").value = data.petrollinlit__sum*data1.petrol_price;
+                    })
+                 }
+             })
              fetch(`http://127.0.0.1:8000/nozzel/type/${this.value}`)
              .then(response => response.json())
              .then(data => {
@@ -595,7 +616,9 @@
                         let olp = document.querySelector('#id_openinglitpetrol').value;
                         let clp = document.querySelector('#id_closinglitpetrol').value;
                         let lit = clp - olp
+
                         document.querySelector('#id_totalpprice').value=data.petrol_price*lit;
+                        document.querySelector('#id_totalpetrol').value=lit;
                     })
             }
         })
@@ -610,7 +633,9 @@
                         let olp = document.querySelector('#id_openinglitdiesel').value;
                         let clp = document.querySelector('#id_closinglitdiesel').value;
                         let lit = clp - olp
+
                         document.querySelector('#id_totaldprice').value=data.diesel_price*lit;
+                        document.querySelector('#id_totaldiesel').value=lit;
                     })
             }
         })
