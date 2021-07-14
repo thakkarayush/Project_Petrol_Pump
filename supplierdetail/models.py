@@ -12,6 +12,6 @@ class supplierdetails(models.Model):
     dieselloss = models.FloatField(null=True,blank=True)
     transportation_in=models.IntegerField(validators=[MinValueValidator(0,"Value must be greater than 0")])
     def __str__(self):
-        return f"petrol({self.lostpetrol})-diesel({self.lostdiesel})"
+        return f"petrol({self.lostpetrol})-({self.lostdiesel})"
     def get_absolute_url(self):
         return reverse('supplierdetail-view')

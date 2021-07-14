@@ -15,7 +15,7 @@ class UpdatesupplierdetailView(UpdateView):
     fields = '__all__'
 class DeletesupplierdetailView(DeleteView):
     model = supplierdetails
-    success_url = '/supplierdetails/view'
+    success_url = '/supplierdetail/view'
 #model_confirm_delete.html
 class DetailsupplierdetailView(DetailView):
     model = supplierdetails

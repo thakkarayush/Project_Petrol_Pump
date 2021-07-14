@@ -266,15 +266,17 @@
 
                  if(this.value == 'bank')
                  {
+                     document.querySelector("#reference_id").style.display='none';
                      document.querySelector("#bankname").style.display='block';
                      document.querySelector("#branchname").style.display='block';
                      document.querySelector("#chequeno").style.display='block';
                      document.querySelector("#chequedate").style.display='block';
                      document.querySelector("#IFSC").style.display='block';
-                     document.querySelector("#reference_id").style.display='none';
+
                  }
                  else if(this.value == 'cash')
                  {
+                     document.querySelector("#reference_id").style.display='none';
                      document.querySelector("#bankname").style.display='none';
                      document.querySelector("#branchname").style.display='none';
                      document.querySelector("#chequeno").style.display='none';

@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" id="petrolinlit">
                                 <div class="form-group form-float">
                                         <label class="form-label">petrol in litre</label>
                                     <div class="form-line">
@@ -108,22 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Diesel In Liters</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.dieselinlit %}
-                                        {% if form.dieselinlit.errors %}
-                                            {% for error in form.dieselinlit.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" id="petrolprice">
                                 <div class="form-group form-float">
                                         <label class="form-label">petrolprice</label>
                                     <div class="form-line">
@@ -138,7 +123,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" id="dieselinlit">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Diesel In Liters</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.dieselinlit %}
+                                        {% if form.dieselinlit.errors %}
+                                            {% for error in form.dieselinlit.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6" id="dieselprice">
                                 <div class="form-group form-float">
                                          <label class="form-label">dieselprice</label>
                                    <div class="form-line">
@@ -245,5 +246,40 @@
          }
         })
     </script>
+    <script>
+
+        // hide and show
+        document.addEventListener('DOMContentLoaded',function(){
+         document.querySelector('#id_nozzel').onchange=function(){
+             fetch(`http://127.0.0.1:8000/nozzel/type/${this.value}`)
+             .then(response => response.json())
+             .then(data => {
+                    let type=data.type.toLowerCase();
+                    if(type=='petrol')
+                    {
+
+                        document.querySelector("#petrolinlit").style.display='block';
+                        document.querySelector("#petrolprice").style.display='block';
+                        document.querySelector("#dieselinlit").style.display='none';
+                        document.querySelector("#dieselprice").style.display='none';
+                    }
+                    else if (type == 'diesel')
+                    {
+                        document.querySelector("#petrolprice").style.display='none';
+                        document.querySelector("#petrolinlit").style.display='none';
+                        document.querySelector("#dieselinlit").style.display='block';
+                        document.querySelector("#dieselprice").style.display='block';
+
+                    }
+
+             })
+         }
+
+         //get total petrol
+
+
+        })
+    </script>
+
 
 {% endblock %}

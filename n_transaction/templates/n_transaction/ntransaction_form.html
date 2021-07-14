@@ -597,7 +597,7 @@ from django.db.models import Sum
                      fetch("http://127.0.0.1:8000/rates/petrolprice/")
                     .then(response => response.json())
                     .then(data1 => {
-                        document.querySelector("#id_creditoramount").value = data.petrollinlit__sum*data1.petrol_price;
+                        document.querySelector("#id_creditoramount").value = data.petrolinlit__sum*data1.petrol_price;
                     })
                  }
              })

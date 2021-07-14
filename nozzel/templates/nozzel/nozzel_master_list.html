@@ -32,6 +32,7 @@
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Number</th>
                                             <th>Type</th>
                                             <th>Remark</th>
@@ -41,6 +42,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Number</th>
                                             <th>Type</th>
                                             <th>Remark</th>
@@ -51,6 +53,7 @@
                                    <tbody>
                                    {% for nozzel_master in nozzel %}
                                        <tr>
+                                        <td>{{ nozzel_master.id }}</td>
                                         <td>{{ nozzel_master.nozzel_no }}</td>
                                         <td>{{ nozzel_master.type }}</td>
                                         <td>{{ nozzel_master.remark }}</td>

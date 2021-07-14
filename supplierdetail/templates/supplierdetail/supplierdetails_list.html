@@ -36,9 +36,9 @@
                                             <th>receipt_no</th>
                                             <th>petrolbefore</th>
                                             <th>dieselbefore </th>
-                                            <th>time</th>
                                             <th>petrolloss</th>
                                             <th>Dieselloss</th>
+                                            <th>Time</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -48,9 +48,9 @@
                                             <th>receipt_no</th>
                                             <th>petrolbefore</th>
                                             <th>dieselbefore </th>
-                                            <th>time</th>
                                             <th>petrolloss</th>
                                             <th>Dieselloss</th>
+                                            <th>Time</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -58,15 +58,12 @@
                                    {% for supplierdetail in supplierdetails %}
                                        <tr>
                                         <td>{{ supplierdetail.date }}</td>
+                                        <td>{{ supplierdetail.receipt_no }}</td>
                                         <td>{{ supplierdetail.petrolbefore }}</td>
-                                        <td>{{ supplierdetail.petrolafter }}</td>
-                                        <td>{{ supplierdetail.lostpetrol }}</td>
-                                        <td>{{ supplierdetail.lostpetrolprice }}</td>
                                         <td>{{ supplierdetail.dieselbefore }}</td>
-                                        <td>{{ supplierdetail.dieselafter }}</td>
-                                        <td>{{ supplierdetail.lostdiesel }}</td>
-                                        <td>{{ supplierdetail.lostdieselprice }}</td>
-
+                                        <td>{{ supplierdetail.petrolloss }}</td>
+                                        <td>{{ supplierdetail.dieselloss }}</td>
+                                        <td>{{ supplierdetail.time }}</td>
                                        <th>
                                            <a href="{% url 'supplierdetail-update'  supplierdetail.id %}" class="btn btn-info"> update</a>
                                            <a href="{% url 'supplierdetail-delete'  supplierdetail.id %}" class="btn btn-danger"> Delete</a>
