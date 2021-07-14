@@ -51,9 +51,9 @@
                             <form id="form_validation"  enctype="multipart/form-data" method="POST">
                                 {% csrf_token %}
                             <div class="form-group form-float">
+                                        <label class="form-label">Date</label>
                                     <div class="form-line">
                                         {% crispy_field form.date 'class' 'datepicker' %}
-                                        <label class="form-label">Date</label>
                                          {% if form.date.errors %}
                                             {% for error in form.date.errors %}
                                                 <div class="invalid-feedback">
@@ -64,61 +64,9 @@
                                     </div>
                                 </div>
                             <div class="form-group form-float">
-                                    <div class="form-line">
-                                        {% crispy_field form.v_no %}
-                                        <label class="form-label">Vehicle Number</label>
-                                         {% if form.v_no.errors %}
-                                            {% for error in form.v_no.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            <div class="form-group form-float">
-                                    <div class="form-line">
-                                        {% crispy_field form.driver_name %}
-                                        <label class="form-label">Driver name</label>
-                                         {% if form.driver_name.errors %}
-                                            {% for error in form.driver_name.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            <div class="form-group form-float">
-                                    <label class="form-label">Fuel Type</label>
-                                        {% crispy_field form.fuel_type %}
-
-                                         {% if form.fuel_type.errors %}
-                                            {% for error in form.fuel_type.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-
-                                </div>
-                            <div class="form-group form-float">
-                                    <div class="form-line">
-                                        {% crispy_field form.remarks %}
-                                        <label class="form-label">remarks</label>
-                                         {% if form.remarks.errors %}
-                                            {% for error in form.remarks.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            <div class="form-group form-float">
+                                        <label class="form-label">creditor</label>
                                     <div class="form-line">
                                         {% crispy_field form.creditor %}
-                                        <label class="form-label">creditor</label>
                                          {% if form.creditor.errors %}
                                             {% for error in form.creditor.errors %}
                                                 <div class="invalid-feedback">
@@ -128,6 +76,71 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                        <label class="form-label">Vehicle Number</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.v_no %}
+                                         {% if form.v_no.errors %}
+                                            {% for error in form.v_no.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                        <label class="form-label">Driver name</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.driver_name %}
+                                         {% if form.driver_name.errors %}
+                                            {% for error in form.driver_name.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                    <label class="form-label">Fuel Type</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.fuel_type %}
+
+                                         {% if form.fuel_type.errors %}
+                                            {% for error in form.fuel_type.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                        <label class="form-label">remarks</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.remarks %}
+                                         {% if form.remarks.errors %}
+                                            {% for error in form.remarks.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+
 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>

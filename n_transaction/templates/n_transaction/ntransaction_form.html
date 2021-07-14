@@ -1,3 +1,4 @@
+from django.db.models import Sum
 {% extends "user/layout.html" %}
 {% load static %}
 {% load crispy_forms_field %}
@@ -48,6 +49,7 @@
                         <div class="body">
                             <form id="form_validation" method="POST">
                                 {% csrf_token %}
+
                                 <div class="form-group form-float">
                                 <label class="form-label">Date </label>
                                     <div class="form-line">
@@ -69,10 +71,12 @@
                                         </center>
 
                                 </div>
-                                <div class="form-group form-float">
-                                <label class="form-label">openingtime</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.openingtime %}
+                                <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="form-label">Opening Time</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.openingtime 'class' 'timepicker form-control' %}
 
                                          {% if form.openingtime.errors %}
                                             {% for error in form.openingtime.errors %}
@@ -81,12 +85,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float">
-                                <label class="form-label">closingtime</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.closingtime %}
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="form-label">Closing Time</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.closingtime 'class' 'timepicker form-control' %}
 
                                          {% if form.closingtime.errors %}
                                             {% for error in form.closingtime.errors %}
@@ -95,8 +101,11 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
                                 <div class="form-group form-float">
 
                                         <center>
@@ -125,10 +134,12 @@
                                         </center>
 
                                 </div>
-                                <div class="form-group form-float" id="openinglitpetrol">
-                                <label class="form-label">Opening liters of petrol</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.openinglitpetrol %}
+                                <div class="row clearfix">
+                                <div class="col-sm-6" id="openinglitpetrol">
+                                    <div class="form-group" >
+                                    <label class="form-label">Opening liters of petrol</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.openinglitpetrol %}
 
                                          {% if form.openinglitpetrol.errors %}
                                             {% for error in form.openinglitpetrol.errors %}
@@ -137,12 +148,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="closinglitpetrol">
-                                <label class="form-label">Closing liters of petrol</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.closinglitpetrol %}
+                                <div class="col-sm-6" id="closinglitpetrol">
+                                    <div class="form-group">
+                                    <label class="form-label">Closing liters of petrol</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.closinglitpetrol %}
 
                                          {% if form.closinglitpetrol.errors %}
                                             {% for error in form.closinglitpetrol.errors %}
@@ -151,12 +164,16 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="totalpetrol">
-                                <label class="form-label">Total petrol used</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.totalpetrol %}
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6" id="totalpetrol">
+                                    <div class="form-group">
+                                        <label class="form-label">Total petrol used</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.totalpetrol %}
 
                                         {% if form.totalpetrol.errors %}
                                             {% for error in form.totalpetrol.errors %}
@@ -165,12 +182,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="totalpprice">
-                                <label class="form-label">Total petrol price </label>
-                                    <div class="form-line">
-                                        {% crispy_field form.totalpprice %}
+                                <div class="col-sm-6" id="totalpprice">
+                                    <div class="form-group">
+                                        <label class="form-label">Total petrol price </label>
+                                        <div class="form-line">
+                                            {% crispy_field form.totalpprice %}
 
                                         {% if form.totalpprice.errors %}
                                             {% for error in form.totalpprice.errors %}
@@ -179,12 +198,19 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="lostpetrol">
-                                <label class="form-label">Lost Petrol in liters</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.lostpetrol %}
+
+                            </div>
+
+
+                            <div class="row clearfix">
+                                <div class="col-sm-6" id="lostpetrol">
+                                    <div class="form-group">
+                                        <label class="form-label">Lost Petrol in liters</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.lostpetrol %}
 
                                         {% if form.lostpetrol.errors %}
                                             {% for error in form.lostpetrol.errors %}
@@ -193,12 +219,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="lostpetrolprice">
-                                <label class="form-label">Lost petrol price</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.lostpetrolprice %}
+                                <div class="col-sm-6" id="lostpetrolprice">
+                                    <div class="form-group">
+                                        <label class="form-label">Lost petrol price</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.lostpetrolprice %}
 
                                         {% if form.lostpetrolprice.errors %}
                                             {% for error in form.lostpetrolprice.errors %}
@@ -207,8 +235,11 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
                                 <div class="form-group form-float" id="dc">
 
                                         <center>
@@ -216,10 +247,13 @@
                                         </center>
 
                                 </div>
-                                <div class="form-group form-float" id="openinglitdiesel">
-                                <label class="form-label">Opening liters of diesel</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.openinglitdiesel %}
+                            <div class="row clearfix" >
+
+                                <div class="col-sm-6"id="openinglitdiesel">
+                                    <div class="form-group">
+                                        <label class="form-label">Opening liters of diesel</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.openinglitdiesel %}
 
                                          {% if form.openinglitdiesel.errors %}
                                             {% for error in form.openinglitdiesel.errors %}
@@ -228,12 +262,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="closinglitdiesel">
-                                <label class="form-label">Closing liter of diesel</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.closinglitdiesel %}
+                                <div class="col-sm-6" id="closinglitdiesel">
+                                    <div class="form-group">
+                                        <label class="form-label">Closing liter of diesel</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.closinglitdiesel %}
 
                                          {% if form.closinglitdiesel.errors %}
                                             {% for error in form.closinglitdiesel.errors %}
@@ -242,12 +278,16 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="totaldiesel">
-                                <label class="form-label">Total diesel</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.totaldiesel %}
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6" id="totaldiesel">
+                                    <div class="form-group">
+                                        <label class="form-label">Total diesel</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.totaldiesel %}
 
                                         {% if form.totaldiesel.errors %}
                                             {% for error in form.totaldiesel.errors %}
@@ -256,12 +296,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="totaldprice">
-                                <label class="form-label">Total diesel price</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.totaldprice %}
+                                <div class="col-sm-6" id="totaldprice">
+                                    <div class="form-group">
+                                        <label class="form-label">Total diesel price</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.totaldprice %}
 
                                         {% if form.totaldprice.errors %}
                                             {% for error in form.totaldprice.errors %}
@@ -270,12 +312,16 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="lostdiesel">
-                                <label class="form-label">Lost Diesel in liters</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.lostdiesel %}
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6"id="lostdiesel">
+                                    <div class="form-group">
+                                        <label class="form-label">Lost Diesel in liters</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.lostdiesel %}
 
                                         {% if form.lostdiesel.errors %}
                                             {% for error in form.lostdiesel.errors %}
@@ -284,13 +330,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group form-float" id="lostdieselprice">
-                                <label class="form-label">Lost diesel price</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.lostdieselprice %}
+                                <div class="col-sm-6" id="lostdieselprice">
+                                    <div class="form-group" >
+                                        <label class="form-label">Lost diesel price</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.lostdieselprice %}
 
                                         {% if form.lostdieselprice.errors %}
                                             {% for error in form.lostdieselprice.errors %}
@@ -299,8 +346,13 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
+
+
                                 <div class="form-group form-float">
 
                                         <center>
@@ -308,8 +360,10 @@
                                         </center>
 
                                 </div>
-                                <div class="form-group form-float">
-                                <label class="form-label">Amount</label>
+                                <div class="row clearfix">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Amount</label>
                                     <div class="form-line">
                                         {% crispy_field form.amount %}
 
@@ -321,9 +375,11 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
+                                    </div>
                                 </div>
-                                <div class="form-group form-float" >
-                                <label class="form-label">Cash</label>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Cash</label>
                                     <div class="form-line">
                                         {% crispy_field form.cash %}
 
@@ -335,9 +391,11 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
+                                    </div>
                                 </div>
-                                <div class="form-group form-float" >
-                                <label class="form-label">Paytm</label>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="form-label">Paytm</label>
                                     <div class="form-line">
                                         {% crispy_field form.paytm %}
 
@@ -349,9 +407,13 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
+                                    </div>
                                 </div>
-                                <div class="form-group form-float" >
-                                <label class="form-label">Googlepay</label>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Googlepay</label>
                                     <div class="form-line">
                                         {% crispy_field form.googlepay %}
 
@@ -363,9 +425,11 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
+                                    </div>
                                 </div>
-                                <div class="form-group form-float" >
-                                <label class="form-label">Card</label>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Card</label>
                                     <div class="form-line">
                                         {% crispy_field form.card %}
 
@@ -377,9 +441,11 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
+                                    </div>
                                 </div>
-                                <div class="form-group form-float" >
-                                <label class="form-label">Phonepay</label>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Phonepay</label>
                                     <div class="form-line">
                                         {% crispy_field form.phonepay %}
 
@@ -391,40 +457,11 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
-                                </div>
-                                <div class="form-group form-float" id="bankname">
-                                <label class="form-label">Bank name</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.bankname %}
-
-                                         {% if form.bankname.errors %}
-                                            {% for error in form.bankname.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
                                     </div>
                                 </div>
-                                <div class="form-group form-float" id="branchname">
-                                <label class="form-label">Branch Name</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.branchname %}
-
-                                         {% if form.branchname.errors %}
-                                            {% for error in form.branchname.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-
-
-                                <div class="form-group form-float">
-                                <label class="form-label">Creditor Amount</label>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Creditor Amount</label>
                                     <div class="form-line">
                                         {% crispy_field form.creditoramount %}
 
@@ -436,7 +473,10 @@
                                             {% endfor %}
                                         {% endif %}
                                     </div>
+                                    </div>
                                 </div>
+                            </div>
+
 
 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
@@ -498,6 +538,12 @@
         weekStart: 1,
         time: false
     });
+          $('.timepicker').bootstrapMaterialDatePicker({
+        format: 'HH:mm',
+        clearButton: true,
+        date: false
+    });
+
 
     </script>
 
@@ -535,13 +581,12 @@
         // hide and show
         document.addEventListener('DOMContentLoaded',function(){
          document.querySelector('#id_nozzelid').onchange=function(){
-
+            //creditor transaction
              fetch(`http://127.0.0.1:8000/nozzel/camount/${this.value}`)
              .then(response => response.json())
              .then(data =>{
                  if(data.dieselinlit__sum != undefined)
                  {
-                     console.log("inside diesel ");
                      fetch("http://127.0.0.1:8000/rates/dieselprice/")
                     .then(response => response.json())
                     .then(data1 => {
@@ -640,6 +685,37 @@
             }
         })
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function (){
+            document.querySelector('#id_lostpetrol').onchange=function (){
+                let cash =document.querySelector('#id_cash').value;
+                let paytm =document.querySelector('#id_paytm').value;
+                let phonepay =document.querySelector('#id_phonepay').value;
+                let card =document.querySelector('#id_card').value;
+                let googlepay =document.querySelector('#id_googlepay').value;
+                let camount =document.querySelector('#id_creditoramount').value;
+                let tp=document.querySelector('#id_totalpprice').value;
+                let tamount=cash+paytm+phonepay+card+googlepay+camount;
+                console.log(tamount)
+                document.querySelector('#id_lostpetrolprice').value=tamount-tp;
+            }
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function (){
+            document.querySelector('#id_phonepay').onfocusout=function (){
+                let cash =parseInt(document.querySelector('#id_cash').value);
+                let paytm =parseInt(document.querySelector('#id_paytm').value);
+                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
+                let card =parseInt(document.querySelector('#id_card').value);
+                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
+                let camount =parseInt(document.querySelector('#id_creditoramount').value);
+                let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                let a=cash+paytm+phonepay+card+googlepay+camount
 
+                document.querySelector('#id_lostdieselprice').value=a-tp;
+            }
+        })
+    </script>
 
 {% endblock %}

@@ -62,7 +62,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Petrol tank Open</label>
                                     <div class="form-line">
-                                        {% crispy_field form.ptank_open %}
+                                        {% crispy_field form.ptank_open 'value' openinglitpetrol %}
 
                                          {% if form.ptank_open.errors %}
                                             {% for error in form.ptank_open.errors %}
@@ -76,7 +76,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Petrol Tank Close</label>
                                     <div class="form-line">
-                                        {% crispy_field form.ptank_close %}
+                                        {% crispy_field form.ptank_close 'value' closinglitpetrol %}
 
                                         {% if form.ptank_close.errors %}
                                             {% for error in form.ptank_close.errors %}
@@ -90,7 +90,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Total Petrol</label>
                                     <div class="form-line">
-                                        {% crispy_field form.totalpetrol %}
+                                        {% crispy_field form.totalpetrol 'value' totalpetrol %}
 
                                         {% if form.totalpetrol.errors %}
                                             {% for error in form.totalpetrol.errors %}
@@ -104,7 +104,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Lost Petrol In Liters</label>
                                     <div class="form-line">
-                                        {% crispy_field form.lostpetrol %}
+                                        {% crispy_field form.lostpetrol 'value' lostpetrol %}
 
                                         {% if form.lostpetrol.errors %}
                                             {% for error in form.lostpetrol.errors %}
@@ -118,7 +118,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Diesel Tank Open</label>
                                     <div class="form-line">
-                                        {% crispy_field form.dtank_open %}
+                                        {% crispy_field form.dtank_open 'value' openinglitdiesel %}
 
                                          {% if form.dtank_open.errors %}
                                             {% for error in form.dtank_open.errors %}
@@ -132,7 +132,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Diesel Tank Close</label>
                                     <div class="form-line">
-                                        {% crispy_field form.dtank_close %}
+                                        {% crispy_field form.dtank_close 'value' closinglitdiesel %}
 
                                         {% if form.dtank_close.errors %}
                                             {% for error in form.dtank_close.errors %}
@@ -146,7 +146,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Total Diesel</label>
                                     <div class="form-line">
-                                        {% crispy_field form.totaldiesel %}
+                                        {% crispy_field form.totaldiesel 'value' totaldiesel %}
 
                                         {% if form.totaldiesel.errors %}
                                             {% for error in form.totaldiesel.errors %}
@@ -160,7 +160,7 @@
                                 <div class="form-group form-float">
                                 <label class="form-label">Lost Diesel in liters</label>
                                     <div class="form-line">
-                                        {% crispy_field form.lostdiesel %}
+                                        {% crispy_field form.lostdiesel 'value' lostdiesel %}
 
                                         {% if form.lostdiesel.errors %}
                                             {% for error in form.lostdiesel.errors %}
@@ -209,6 +209,15 @@
         time: false
     });
 
+    </script>
+    <script>
+
+    document.addEventListener('DOMContentLoaded',function () {
+        document.querySelector('#id_date').onkeyup = function () {
+            console.log({{ totalpetrol }})
+            document.querySelector('#id_totalpetrol').value={{ totalpetrol }}
+        }
+    })
     </script>
 
     {% endblock %}

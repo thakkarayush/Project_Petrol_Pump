@@ -59,10 +59,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                <div class="form-group form-float">
-                                <label class="form-label">Petrol Price</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.petrol_price %}
+                                <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="form-label">Petrol Price</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.petrol_price %}
 
                                          {% if form.petrol_price.errors %}
                                             {% for error in form.petrol_price.errors %}
@@ -71,12 +73,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float">
-                                <label class="form-label">Diesel price</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.diesel_price %}
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="form-label">Diesel price</label>
+                                        <div class="form-line">
+                                            {% crispy_field form.diesel_price %}
 
                                         {% if form.diesel_price.errors %}
                                             {% for error in form.diesel_price.errors %}
@@ -85,8 +89,11 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>

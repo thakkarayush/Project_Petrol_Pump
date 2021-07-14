@@ -1,5 +1,5 @@
 import pywhatkit as kit
 
-kit.sendwhatmsg("+917698208835","hii",17,40,)
+kit.sendwhatmsg("+91","hii",17,8,)
 
 

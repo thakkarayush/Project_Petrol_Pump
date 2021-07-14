@@ -49,9 +49,9 @@
                             <form id="form_validation"  enctype="multipart/form-data" method="POST">
                                 {% csrf_token %}
                             <div class="form-group form-float">
+                                        <label class="form-label">Date</label>
                                     <div class="form-line">
                                         {% crispy_field form.date 'class' 'datepicker' %}
-                                        <label class="form-label">Date</label>
                                          {% if form.date.errors %}
                                             {% for error in form.date.errors %}
                                                 <div class="invalid-feedback">
@@ -62,9 +62,9 @@
                                     </div>
                                 </div>
                             <div class="form-group form-float">
+                                        <label class="form-label">Employee Id</label>
                                     <div class="form-line">
                                         {% crispy_field form.employeeid %}
-                                        <label class="form-label">Employee Id</label>
                                          {% if form.employeeid.errors %}
                                             {% for error in form.employeeid.errors %}
                                                 <div class="invalid-feedback">
@@ -74,10 +74,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            <div class="row clearfix">
+                            <div class="col-sm-6">
                             <div class="form-group form-float">
+                                        <label class="form-label">Amount</label>
                                     <div class="form-line">
                                         {% crispy_field form.amount %}
-                                        <label class="form-label">Amount</label>
                                          {% if form.amount.errors %}
                                             {% for error in form.amount.errors %}
                                                 <div class="invalid-feedback">
@@ -87,10 +89,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                             <div class="form-group form-float">
+                                        <label class="form-label">Finalise Salary</label>
                                     <div class="form-line">
                                         {% crispy_field form.finalisesalary %}
-                                        <label class="form-label">finalisesalary</label>
                                          {% if form.finalisesalary.errors %}
                                             {% for error in form.finalisesalary.errors %}
                                                 <div class="invalid-feedback">
@@ -100,8 +104,11 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                             <div class="form-group form-float">
                                     <label class="form-label">Type</label>
+                            <div class="form-line">
                                         {% crispy_field form.type %}
 
                                          {% if form.type.errors %}
@@ -111,12 +118,14 @@
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
-
+                            </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                             <div class="form-group form-float" id="bankname">
+                                        <label class="form-label">Bank Name</label>
                                     <div class="form-line">
                                         {% crispy_field form.bankname %}
-                                        <label class="form-label">bank name</label>
                                          {% if form.bankname.errors %}
                                             {% for error in form.bankname.errors %}
                                                 <div class="invalid-feedback">
@@ -126,10 +135,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                             <div class="form-group form-float" id="chequeno">
+                                        <label class="form-label">Cheque number</label>
                                     <div class="form-line">
                                         {% crispy_field form.chequeno %}
-                                        <label class="form-label">chequeno</label>
                                          {% if form.chequeno.errors %}
                                             {% for error in form.chequeno.errors %}
                                                 <div class="invalid-feedback">
@@ -139,10 +150,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                                 <div class="form-group form-float" id="branchname">
+                                        <label class="form-label">Bank Branch Name</label>
                                     <div class="form-line">
                                         {% crispy_field form.branchname %}
-                                        <label class="form-label">branchname</label>
                                          {% if form.branchname.errors %}
                                             {% for error in form.branchname.errors %}
                                                 <div class="invalid-feedback">
@@ -152,10 +165,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                                 <div class="form-group form-float" id="chequedate">
+                                        <label class="form-label">Cheque Date</label>
                                     <div class="form-line">
                                         {% crispy_field form.cheque_date 'class' 'datepicker' %}
-                                        <label class="form-label">Cheque Date</label>
                                          {% if form.cheque_date.errors %}
                                             {% for error in form.cheque_date.errors %}
                                                 <div class="invalid-feedback">
@@ -165,10 +180,12 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
                                 <div class="form-group form-float" id="reference_id">
+                                        <label class="form-label">Reference ID</label>
                                     <div class="form-line">
                                         {% crispy_field form.reference_id %}
-                                        <label class="form-label">reference id</label>
                                          {% if form.reference_id.errors %}
                                             {% for error in form.reference_id.errors %}
                                                 <div class="invalid-feedback">
@@ -178,6 +195,7 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                            </div>
 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>
