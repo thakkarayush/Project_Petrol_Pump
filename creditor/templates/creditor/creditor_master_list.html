@@ -36,6 +36,7 @@
                                             <th>Last name</th>
                                             <th>Mobile</th>
                                             <th>Telephone</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -45,7 +46,7 @@
                                             <th>Last name</th>
                                             <th>Mobile</th>
                                             <th>Telephone</th>
-
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                    <tbody>
@@ -57,11 +58,11 @@
                                                     <td>{{ creditor.mobile }}</td>
                                                     <td>{{ creditor.officeno }}</td>
 
-                                        <th>
+                                        <td>
                                             <a href="{% url 'creditor-update'  creditor.id %}" class="btn btn-info"> update</a>
                                             <a href="{% url 'creditor-delete'  creditor.id %}" class="btn btn-danger"> Delete</a>
                                             <a href="{% url 'creditor-detail'  creditor.id %}" class="btn btn-danger"> Detail</a>
-                                        </th>
+                                        </td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -75,6 +76,9 @@
         </div>
 {% endblock %}
 {% block extra_js %}
+        <!-- Jquery Core Js -->
+<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+
       <!-- Jquery DataTable Plugin Js -->
     <script src="{% static 'plugins/jquery-datatable/jquery.dataTables.js'%}"></script>
     <script src="{% static 'plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js'%}"></script>

@@ -31,7 +31,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Supplier data Entry Form</h2>
+                            <center><h2>Supplier Data Entry Form</h2></center>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -154,7 +154,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group form-float">
-                                <label class="form-label">Diesel Loss In Lixters</label>
+                                <label class="form-label">Diesel Loss In Liters</label>
                                     <div class="form-line">
                                         {% crispy_field form.dieselloss %}
 
@@ -168,6 +168,22 @@
                                     </div>
                                 </div>
                             </div>
+
+                                <div class="form-group form-float">
+                                <label class="form-label">  Oil In Liters</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.oilinlit %}
+
+                                        {% if form.oilinlit.errors %}
+                                            {% for error in form.oilinlit.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
                                 <div class="form-group form-float">
                                 <center><label class="form-label">Transportation Expence</label></center>
                                     <div class="form-line">

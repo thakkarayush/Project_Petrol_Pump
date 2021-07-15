@@ -76,7 +76,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">ADMINBSB - MATERIAL DESIGN</a>
+                <a class="navbar-brand" href="#">ADMINBSB - MATERIAL DESIGN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -282,7 +282,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../../images/user.png" width="48" height="48" alt="User" />
+                    <img src="{% static 'Ayush_Photo.jpg' %}" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</div>
@@ -296,7 +296,7 @@
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="http://127.0.0.1:8000/"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="{% url 'home-page' %}"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="http://127.0.0.1:8000/rates/new/">Rates entry</a>
+                                <a href="{% url 'rate-new' %}">Rates entry</a>
                             </li>
                             <li>
                                 <a href="http://127.0.0.1:8000/rates/view/">Rates view</a>
@@ -453,10 +453,10 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="http://127.0.0.1:8000/c_transaction/new/">Creditor vehicle entry</a>
+                                        <a href="{% url 'ctransaction-new' %}">Creditor transaction entry</a>
                                     </li>
                                     <li>
-                                        <a href="http://127.0.0.1:8000/c_transaction/view/">Creditor vehicle view</a>
+                                        <a href="http://127.0.0.1:8000/c_transaction/view/">Creditor transaction view</a>
                                     </li>
 
                                 </ul>

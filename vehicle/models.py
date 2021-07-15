@@ -1,9 +1,10 @@
 from django.db import models
 from creditor.models import  creditor_master
 from django.urls import reverse
+from datetime import datetime
 # Create your models here.
 class vehicle(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     v_no=models.CharField(max_length=20)
     driver_name=models.CharField(max_length=25,null=True,blank=True)
     choices=[("petrol","petrol"),("diesel","diesel")]

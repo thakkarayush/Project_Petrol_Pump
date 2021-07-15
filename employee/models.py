@@ -37,9 +37,11 @@ class employee(models.Model):
     reference = models.CharField(max_length=50)
     photo=models.ImageField(upload_to='photos',blank=True)
     document=models.FileField(upload_to='documents')
+    choice1=[("Yes","Yes"),("No","No")]
+    vaccinate=models.CharField(choices=choice1,max_length=10)
 
     def __str__(self):
-        return f"employee({self.id})-({self.fname})"
+        return f"{self.id}-{self.fname}"
 
     def get_absolute_url(self):
         return reverse('employee-view')

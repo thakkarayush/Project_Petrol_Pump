@@ -1,9 +1,10 @@
 from django.db import models
 from creditor.models import creditor_master
 from django.urls import reverse
+from datetime import datetime
 # Create your models here.
 class c_payment(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     creditorid=models.ForeignKey(creditor_master,on_delete=models.CASCADE,related_name="payment")
     amount=models.FloatField()
     choice=[("paytm","paytm"),("googlepay","googlepay"),("bank","bank"),("phonepay","phonepay"),("cash","cash")]
@@ -13,7 +14,7 @@ class c_payment(models.Model):
     branchname=models.CharField(max_length=20,blank=True,null=True)
     check_date=models.DateField(blank=True,null=True)
     reference_id=models.CharField(max_length=20,blank=True,null=True)
-
+    slipno=models.FloatField(max_length=20,blank=True,null=True)
     def __str__(self):
         return f"{self.creditorid}-{self.amount}"
 

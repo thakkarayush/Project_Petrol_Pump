@@ -2,10 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.core.validators import MinValueValidator
 from nozzel.models import nozzel_master
-
+from datetime import datetime
 # Create your models here.
 class ntransaction(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     nozzelid = models.ForeignKey(nozzel_master, on_delete=models.CASCADE, related_name="payment")
     amount = models.FloatField()
 
@@ -33,7 +33,7 @@ class ntransaction(models.Model):
     creditoramount=models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
 
     def __str__(self):
-        return f"petrol({self.lostpetrol})-diesel({self.lostdiesel})"
+        return f"{self.nozzelid}-{self.amount}"
 
     def get_absolute_url(self):
         return reverse('ntransaction-view')

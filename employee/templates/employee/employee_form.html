@@ -32,7 +32,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Employee Entry Form</h2>
+                            <center><h2>Employee Details Entry Form</h2></center>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +49,13 @@
                         <div class="body">
                             <form id="form_validation" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
+                            <div class="form-group form-float">
+
+                                        <center>
+                                        <label class="form-label">PERSONAL DETAILS</label>
+                                        </center>
+
+                                </div>
                             <div class="row clearfix">
                             <div class="col-sm-4">
                             <div class="form-group form-float">
@@ -95,8 +102,6 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="row clearfix">
                             <div class="col-sm-6">
                                 <div class="form-group form-float">
                                         <label class="form-label">Mobile</label>
@@ -127,11 +132,154 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Date of birth </label>
+                                    <div class="form-line">
+                                        {% crispy_field form.dob 'class' 'datepicker' %}
+                                         {% if form.dob.errors %}
+                                            {% for error in form.dob.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row clearfix">
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                    <label class="form-label">Gender</label>
+                                <div class="form-line">
+                                        {% crispy_field form.gender %}
+                                         {% if form.gender.errors %}
+                                            {% for error in form.gender.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Education</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.education %}
+                                         {% if form.education.errors %}
+                                            {% for error in form.education.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Pan Number</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.panno %}
+                                         {% if form.panno.errors %}
+                                            {% for error in form.panno.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Aadhar number</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.aadharno %}
+                                         {% if form.aadharno.errors %}
+                                            {% for error in form.aadharno.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Reference</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.reference %}
+                                        {% if form.reference.errors %}
+                                            {% for error in form.reference.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Photo</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.photo %}
+                                        {% if form.photo.errors %}
+                                            {% for error in form.photo.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Document</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.document %}
+                                        {% if form.document.errors %}
+                                            {% for error in form.document.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="form-group form-float">
+                                    <label class="form-label">Vaccinated</label>
+                                <div class="form-line">
+                                        {% crispy_field form.vaccinate %}
+                                         {% if form.vaccinate.errors %}
+                                            {% for error in form.vaccinate.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                </div>
+                            </div>
+
+
+                            <div class="form-group form-float">
+
+                                        <center>
+                                        <label class="form-label">ADDRESS</label>
+                                        </center>
+
+                                </div>
+
                             <div class="col-sm-3">
                                 <div class="form-group form-float">
-                                        <label class="form-label">Block</label>
+                                        <label class="form-label">House no.</label>
                                     <div class="form-line">
                                         {% crispy_field form.block %}
                                          {% if form.block.errors %}
@@ -189,8 +337,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="row clearfix">
+
                             <div class="col-sm-4">
                                 <div class="form-group form-float">
                                         <label class="form-label">City</label>
@@ -236,129 +383,14 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Designation</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.designation %}
-                                         {% if form.designation.errors %}
-                                            {% for error in form.designation.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
+                            <div class="form-group form-float">
+
+                                        <center>
+                                        <label class="form-label">BANK DETAILS</label>
+                                        </center>
+
                                 </div>
-                                </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Date of birth </label>
-                                    <div class="form-line">
-                                        {% crispy_field form.dob 'class' 'datepicker' %}
-                                         {% if form.dob.errors %}
-                                            {% for error in form.dob.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                    <label class="form-label">Gender</label>
-                                <div class="form-line">
-                                        {% crispy_field form.gender %}
-                                         {% if form.gender.errors %}
-                                            {% for error in form.gender.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Education</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.education %}
-                                         {% if form.education.errors %}
-                                            {% for error in form.education.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Salary</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.salary %}
-                                         {% if form.salary.errors %}
-                                            {% for error in form.salary.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Date of Join </label>
-                                    <div class="form-line">
-                                        {% crispy_field form.dateofjoin 'class' 'datepicker' %}
-                                         {% if form.dateofjoin.errors %}
-                                            {% for error in form.dateofjoin.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                    <label class="form-label">Shift time</label>
-                                <div class="form-line">
-                                        {% crispy_field form.shifttime %}
-                                         {% if form.shifttime.errors %}
-                                            {% for error in form.shifttime.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Working Hours </label>
-                                    <div class="form-line">
-                                        {% crispy_field form.workinghours  %}
-                                         {% if form.workinghours.errors %}
-                                            {% for error in form.workinghours.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
 
                                 <div class="form-group form-float">
                                  <label class="form-label">Bank Name</label>
@@ -374,7 +406,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group form-float">
                                         <label class="form-label">Bank Account Number</label>
                                     <div class="form-line">
@@ -389,7 +421,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group form-float">
                                         <label class="form-label">IFSC code</label>
                                     <div class="form-line">
@@ -404,13 +436,37 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="form-group form-float">
+
+                                        <center>
+                                        <label class="form-label">COMPANY DETAILS</label>
+                                        </center>
+
+                                </div>
+                                <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Designation</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.designation %}
+                                         {% if form.designation.errors %}
+                                            {% for error in form.designation.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                </div>
+
                             <div class="col-sm-6">
                                 <div class="form-group form-float">
-                                        <label class="form-label">Pan Number</label>
+                                        <label class="form-label">Salary</label>
                                     <div class="form-line">
-                                        {% crispy_field form.panno %}
-                                         {% if form.panno.errors %}
-                                            {% for error in form.panno.errors %}
+                                        {% crispy_field form.salary %}
+                                         {% if form.salary.errors %}
+                                            {% for error in form.salary.errors %}
                                                 <div class="invalid-feedback">
                                                   {{ error }}
                                                 </div>
@@ -419,13 +475,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group form-float">
-                                        <label class="form-label">Aadhar number</label>
+                                        <label class="form-label">Date of Join </label>
                                     <div class="form-line">
-                                        {% crispy_field form.aadharno %}
-                                         {% if form.aadharno.errors %}
-                                            {% for error in form.aadharno.errors %}
+                                        {% crispy_field form.dateofjoin 'class' 'datepicker' %}
+                                         {% if form.dateofjoin.errors %}
+                                            {% for error in form.dateofjoin.errors %}
                                                 <div class="invalid-feedback">
                                                   {{ error }}
                                                 </div>
@@ -434,13 +490,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group form-float">
-                                        <label class="form-label">Reference</label>
+                                    <label class="form-label">Shift time</label>
+                                <div class="form-line">
+                                        {% crispy_field form.shifttime %}
+                                         {% if form.shifttime.errors %}
+                                            {% for error in form.shifttime.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                        <label class="form-label">Working Hours </label>
                                     <div class="form-line">
-                                        {% crispy_field form.reference %}
-                                        {% if form.reference.errors %}
-                                            {% for error in form.reference.errors %}
+                                        {% crispy_field form.workinghours  %}
+                                         {% if form.workinghours.errors %}
+                                            {% for error in form.workinghours.errors %}
                                                 <div class="invalid-feedback">
                                                   {{ error }}
                                                 </div>
@@ -449,39 +520,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Photo</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.photo %}
-                                        {% if form.photo.errors %}
-                                            {% for error in form.photo.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group form-float">
-                                        <label class="form-label">Document</label>
-                                    <div class="form-line">
-                                        {% crispy_field form.document %}
-                                        {% if form.document.errors %}
-                                            {% for error in form.document.errors %}
-                                                <div class="invalid-feedback">
-                                                  {{ error }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
+
                             </div>
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
-                            </form>
+                             </form>
                         </div>
                     </div>
                 </div>

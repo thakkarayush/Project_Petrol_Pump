@@ -13,6 +13,8 @@
         <li> Diesel After : {{ object.dieselafter }}</li>
         <li> Diesel lost in liters :{{ object.lostdiesel }}</li>
         <li> Diesel lost in price :{{ object.lostdieselprice }}</li>
+        <li> Oil opening in liters : {{ object.oilopeninlit }} </li>
+        <li> Oil coling in liters :{{ object.oilcloseinlit }} </li>
      </ul>
         <input type="submit" value="delete" class="btn btn-danger">
         <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>

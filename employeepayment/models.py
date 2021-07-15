@@ -1,9 +1,10 @@
 from django.db import models
 from employee.models import employee
 from django.urls import reverse
+from datetime import datetime
 # Create your models here.
 class employeepayment(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     employeeid=models.ForeignKey(employee,on_delete=models.CASCADE,related_name="payment")
     amount=models.FloatField()
     finalisesalary=models.FloatField()

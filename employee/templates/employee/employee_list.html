@@ -81,6 +81,10 @@
         </div>
 {% endblock %}
 {% block extra_js %}
+
+    <!-- Jquery Core Js -->
+<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+
       <!-- Jquery DataTable Plugin Js -->
     <script src="{% static 'plugins/jquery-datatable/jquery.dataTables.js'%}"></script>
     <script src="{% static 'plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js'%}"></script>
@@ -92,8 +96,13 @@
     <script src="{% static 'plugins/jquery-datatable/extensions/export/buttons.html5.min.js'%}"></script>
     <script src="{% static 'plugins/jquery-datatable/extensions/export/buttons.print.min.js'%}"></script>
 
+
+
     <!-- Custom Js -->
     <script src="{% static 'js/admin.js'%}"></script>
     <script src="{% static 'js/pages/tables/jquery-datatable.js'%}"></script>
+
+
+
 
 {% endblock %}

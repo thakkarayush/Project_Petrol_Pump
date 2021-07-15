@@ -15,7 +15,7 @@ class calcmasters(models.Model):
     lostdiesel = models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")])
 
     def __str__(self):
-        return f"petrol({self.lostpetrol})-diesel({self.lostdiesel})"
+        return f"{self.ptank_close}-{self.dtank_close}"
 
     def get_absolute_url(self):
         return reverse('calcmaster-view')
