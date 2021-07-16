@@ -1,46 +1,25 @@
 {% extends "user/layout.html" %}
 {% load static %}
 {% block extra_css %}
-     <!-- JQuery DataTable Css -->
-    <link href="{% static 'plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css'%}" rel="stylesheet">
 
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="{% static 'css/themes/all-themes.css" rel="stylesheet'%}" />
- <!-- Animation Css -->
-    <link href="{% static 'plugins/animate-css/animate.css'%}" rel="stylesheet" />
 
-    <!-- Sweet Alert Css -->
-    <link href="{% static 'plugins/sweetalert/sweetalert.css'%}" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/searchbuilder/1.1.0/css/searchBuilder.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css" rel="stylesheet">
+
 
 
 {% endblock %}
 {% block body %}
-               <!-- Exportable Table -->
- <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                Rate Table
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="example">
+
                                     <thead>
+
+
                                         <tr>
+
                                             <th>Date</th>
                                             <th>Petrol Rate</th>
                                             <th>Diesel Rate</th>
@@ -71,36 +50,17 @@
                                            <a href="{% url 'rate-delete'  rate.id %}" class="btn btn-danger"> Delete</a>
                                        </th>
 
+
                                        </tr>
+
                                    {% endfor %}
+
                                    </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Exportable Table -->
-        </div>
 
 {% endblock %}
 {% block extra_js %}
-    <!-- Jquery Core Js -->
-<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
 
-     <!-- Jquery Validation Plugin Css -->
-    <script src="{% static 'plugins/jquery-validation/jquery.validate.js'%}"></script>
-
-    <!-- JQuery Steps Plugin Js -->
-    <script src="{% static 'plugins/jquery-steps/jquery.steps.js'%}"></script>
-
-    <!-- Sweet Alert Plugin Js -->
-    <script src="{% static 'plugins/sweetalert/sweetalert.min.js'%}"></script>
-
-    <script src="{% static 'js/pages/forms/form-validation.js'%}"></script>
-
-     <!-- Moment Plugin Js -->
-    <script src="{% static 'plugins/momentjs/moment.js'%}"></script>
 
       <!-- Jquery DataTable Plugin Js -->
     <script src="{% static 'plugins/jquery-datatable/jquery.dataTables.js'%}"></script>
@@ -114,14 +74,28 @@
     <script src="{% static 'plugins/jquery-datatable/extensions/export/buttons.print.min.js'%}"></script>
 
 
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'print',
+                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img.png' %}' width='200' height='200'></img></div>"
+            }
+        ]
+    } );
+} );
+</script>
+
     <!-- Custom Js -->
     <script src="{% static 'js/admin.js'%}"></script>
     <script src="{% static 'js/pages/tables/jquery-datatable.js'%}"></script>
-
-
-
-
-
-
-
 {% endblock %}

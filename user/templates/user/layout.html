@@ -782,10 +782,10 @@
 
     <!-- Custom Js -->
     <script src="{% static 'js/admin.js'%}"></script>
-    <script src="{% static 'js/pages/index.js'%}"></script>
+{#    <script src="{% static 'js/pages/index.js'%}"></script>#}
 
     <!-- Demo Js -->
-    <script src="{% static 'js/demo.js'%}"></script>
+   {% comment %} <script src="{% static 'js/demo.js'%}"></script>{% endcomment %}
     {% block extra_js %}
     {% endblock %}
 </body>

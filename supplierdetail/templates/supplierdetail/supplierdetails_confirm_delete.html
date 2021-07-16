@@ -1,106 +1,115 @@
 {% extends "user/layout.html" %}
 {% block body %}
+{% load static %}
     <h1> Are you sure you want to delete ?</h1>
     <form method="post">
     {% csrf_token %}
-    <div class="card profile-card">
+    <div class="col-sm-3">
+                    <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.designation }}</p>
 
+                            </div>
+                        </div>
 
                     </div>
-
+                </div>
+                <div class="col-sm-9">
                     <div class="card card-about-me">
 
                         <div class="body">
-                            <ul>
-                                <li>
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        </i>Date
+                                        <b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">receipt_no</i>
-                                        receipt_no
+                                        <i class="material-icons"></i><b>
+                                        receipt_no</b>
                                     </div>
                                     <div class="content">
                                         {{ object.receipt_no}}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">petrolbefore</i>
-                                        petrolbefore
+                                        <i class="material-icons"></i><b>
+                                        petrol before</b>
                                     </div>
                                     <div class="content">
-                                       {{ object.petrolbefore }}
+                                        {{ object.petrolbefore }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        diesellbefore
+                                        <i class="material-icons"></i><b>
+                                        dieselbefore</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.diesellbefore }}
+                                        {{ object.dieselbefore }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">access_time</i>
-                                        time
+                                        <i class="material-icons"></i><b>
+                                        time</b>
                                     </div>
                                     <div class="content">
                                         {{ object.time }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        petrolloss
+                                        <i class="material-icons"></i><b>
+                                        petrolloss</b>
                                     </div>
                                     <div class="content">
                                         {{ object.petrolloss }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        dieselloss
+                                        <i class="material-icons"></i><b>
+                                        dieselloss</b>
                                     </div>
                                     <div class="content">
                                         {{ object.dieselloss }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        Oil in liters
+                                        <i class="material-icons"></i><b>
+                                        Oil in liters</b>
                                     </div>
                                     <div class="content">
                                         {{ object.oilinlit }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-6">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        transportation_inr
+                                        <i class="material-icons"></i><b>
+                                        Transportation Charges</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.transportation_inr }}
+                                        {{ object.transportation_in }}
                                     </div>
-                                </li>
-
-
-                            </ul>
-
-
-                            </ul>
+                                </div>
+                            <br><br><br><br><br><br><br><br>
                         </div>
                     </div>
+                </div>
+
         <input type="submit" value="delete" class="btn btn-danger">
         <a href="{% url 'employee-view' %}" class="btn btn-info" >cancel </a>
     </form>

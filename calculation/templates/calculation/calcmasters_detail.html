@@ -2,96 +2,111 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block body %}
-<div class="card profile-card">
+<div class="col-sm-3">
+                <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
-                    </div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.companyname }}</p>
+
+                            </div>
+                        </div>
+                </div>
+    </div>
+    <div class="col-sm-9">
+
                     <div class="card card-about-me">
                         <div class="body">
-                            <ul>
-                                <li>
+                            
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        Date
+                                        <b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        ptank_open
+                                        <i class="material-icons"></i><b>
+                                        ptank_open</b>
                                     </div>
                                     <div class="content">
                                         {{ object.ptank_open}}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        ptank_close
+                                        <i class="material-icons"></i><b>
+                                        ptank_close</b>
                                     </div>
                                     <div class="content">
                                        {{ object.ptank_close }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        dtank_open
+                                        <i class="material-icons"></i><b>
+                                        dtank_open</b>
                                     </div>
                                     <div class="content">
                                         {{ object.dtank_open }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        dtank_close
+                                        <i class="material-icons"></i><b>
+                                        dtank_close</b>
                                     </div>
                                     <div class="content">
                                         {{ object.dtank_close}}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        totalpetrol
+                                        <i class="material-icons"></i><b>
+                                        totalpetrol</b>
                                     </div>
                                     <div class="content">
                                         {{ object.totalpetrol }}
                                     </div>
-                                </li>
+                                </div >
 
-                                <li>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        totaldiesel
+                                        <i class="material-icons"></i><b>
+                                        totaldiesel</b>
                                     </div>
                                     <div class="content">
                                         {{ object.totaldiesel}}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        lostpetrol
+                                        <i class="material-icons"></i><b>
+                                        lostpetrol</b>
                                     </div>
                                     <div class="content">
                                         {{ object.lostpetrol }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        lostpetrol
+                                        <i class="material-icons"></i><b>
+                                        lostpetrol</b>
                                     </div>
                                     <div class="content">
                                         {{ object.lostpetrol }}
                                     </div>
-                                </li>
+                                </div >
 
-
-                            </ul>
+                            <br><br><br><br><br><br><br><br><br><br>
+                            
                         </div>
                     </div>
+    </div>
 {% endblock %}

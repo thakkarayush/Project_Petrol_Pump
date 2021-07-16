@@ -1,77 +1,91 @@
 {% extends "user/layout.html" %}
 {% block body %}
+{% load static %}
     <h1> Are you sure you want to delete ?</h1>
     <form method="post">
     {% csrf_token %}
-    <div class="card profile-card">
+    <div class="col-sm-3">
+                    <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.designation }}</p>
 
+                            </div>
+                        </div>
 
                     </div>
+                </div>
+                <div class="col-sm-9">
 
                     <div class="card card-about-me">
 
                         <div class="body">
-                            <ul>
-                                <li>
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Date
+                                        <i class="fa fa-birthday-cake"></i><b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">location_on</i>
-                                        Vehicle Number
+                                        <i class="material-icons"></i><b>
+                                        Vehicle Number</b>
                                     </div>
                                     <div class="content">
                                         {{ object.v_no }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        Driver Name
+                                        <i class="material-icons"></i><b>
+                                        Driver Name</b>
                                     </div>
                                     <div class="content">
                                        {{ object.driver_name }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        fuel type
+                                        <i class="material-icons"></i><b>
+                                        fuel type</b>
                                     </div>
                                     <div class="content">
                                         {{ object.fuel_type }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        Remarks
+                                        <i class="material-icons"></i><b>
+                                        Remarks</b>
                                     </div>
                                     <div class="content">
                                         {{ object.remarks }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        Creditor
+                                        <i class="material-icons"></i><b>
+                                        Creditor</b>
                                     </div>
                                     <div class="content">
                                         {{ object.creditor }}
                                     </div>
-                                </li>
+                                </div>
+
+                            <br><br><br><br><br><br><br><br>
 
 
-
-                            </ul>
                         </div>
                     </div>
+                </div>
         <input type="submit" value="delete" class="btn btn-danger">
         <a href="{% url 'employee-view' %}" class="btn btn-info" >cancel </a>
     </form>

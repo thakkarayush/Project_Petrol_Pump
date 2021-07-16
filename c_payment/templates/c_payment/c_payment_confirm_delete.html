@@ -1,112 +1,125 @@
 {% extends "user/layout.html" %}
 {% block body %}
+{% load static %}
     <h1> Are you sure you want to delete ?</h1>
     <form method="post">
     {% csrf_token %}
-    <div class="card profile-card">
+    <div class="col-sm-3">
+                <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.companyname }}</p>
 
-
-                    </div>
+                            </div>
+                        </div>
+                </div>
+    </div>
+    <div class="col-sm-9">
 
                     <div class="card card-about-me">
 
                         <div class="body">
-                            <ul>
-                                <li>
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Date
+                                        <i class="fa fa-birthday-cake"></i><b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">location_on</i>
-                                        creditor id
+                                        <i class="material-icons"></i>
+                                        <b>creditor id</b>
                                     </div>
                                     <div class="content">
                                         {{ object.creditorid }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        amount
+                                        <i class="material-icons"></i>
+                                        <b>Amount</b>
                                     </div>
                                     <div class="content">
                                        {{ object.amount }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        type
+                                        <b>Type</b>
                                     </div>
                                     <div class="content">
                                         {{ object.type }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        bank name
+                                        <b>bank name</b>
                                     </div>
                                     <div class="content">
                                         {{ object.bankname }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        cheque no
+                                        <b>cheque no</b>
                                     </div>
                                     <div class="content">
                                         {{ object.chequeno }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        branch name
+                                        <b>branch name</b>
                                     </div>
                                     <div class="content">
                                         {{ object.branchname }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        cheque date
+                                        <b>cheque date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.check_date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        reference id
+                                        <b>reference id</b>
                                     </div>
                                     <div class="content">
                                         {{ object.reference_id }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Slip number
+                                        <b>Slip number</b>
                                     </div>
                                     <div class="content">
                                         {{ object.slipno }}
                                     </div>
-                                </li>
+                                </div>
 
+<br><br><br><br><br><br><br><br><br><br>
 
-                            </ul>
                         </div>
                     </div>
+    </div>
         <input type="submit" value="delete" class="btn btn-danger">
         <a href="{% url 'cpayment-view' %}" class="btn btn-info" >cancel </a>
     </form>
