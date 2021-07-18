@@ -9,6 +9,9 @@
 {% endblock %}
 {% block body %}
                <!-- Exportable Table -->
+    <div class="header" >
+                     <center><h2>Calculation Master Table</h2></center>
+                    </div>
 
                                 <table  id="example">
                                     <thead>
@@ -55,7 +58,7 @@
                                        <td>
                                            <a href="{% url 'calcmaster-update'  calcmaster.id %}" class="btn btn-info"> update</a>
                                            <a href="{% url 'calcmaster-delete'  calcmaster.id %}" class="btn btn-danger"> Delete</a>
-                                           <a href="{% url 'calcmaster-detail'  calcmaster.id %}" class="btn btn-danger"> Detail</a>
+                                           <a href="{% url 'calcmaster-detail'  calcmaster.id %}" class="btn btn-success waves-effect"> Detail</a>
                                        </td>
 
                                        </tr>

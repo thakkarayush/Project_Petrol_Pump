@@ -547,34 +547,6 @@ from django.db.models import Sum
 
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded',function(){
-         document.querySelector('#id_lostpetrol').onkeyup=function(){
-             fetch("http://127.0.0.1:8000/rates/petrolprice/")
-             .then(response => response.json())
-             .then(data => {
-
-                 console.log(data.petrol_price);
-                 let lostpp=document.querySelector('#id_lostpetrolprice');
-                 lostpp.value=data.petrol_price*this.value;
-             })
-         }
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',function(){
-         document.querySelector('#id_lostdiesel').onkeyup=function(){
-             fetch("http://127.0.0.1:8000/rates/dieselprice/")
-             .then(response => response.json())
-             .then(data => {
-
-                 console.log(data.diesel_price);
-                 let lostdp=document.querySelector('#id_lostdieselprice');
-                 lostdp.value=data.diesel_price*this.value;
-             })
-         }
-        })
-    </script>
 
     <script>
 
@@ -696,7 +668,7 @@ from django.db.models import Sum
                 let camount =document.querySelector('#id_creditoramount').value;
                 let tp=document.querySelector('#id_totalpprice').value;
                 let tamount=cash+paytm+phonepay+card+googlepay+camount;
-                console.log(tamount)
+
                 document.querySelector('#id_lostpetrolprice').value=tamount-tp;
             }
         })
@@ -710,10 +682,20 @@ from django.db.models import Sum
                 let card =parseInt(document.querySelector('#id_card').value);
                 let googlepay =parseInt(document.querySelector('#id_googlepay').value);
                 let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totaldprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostpetrolprice').value=a-tp;
 
-                document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
             }
         })
     </script>
@@ -726,10 +708,20 @@ from django.db.models import Sum
                 let card =parseInt(document.querySelector('#id_card').value);
                 let googlepay =parseInt(document.querySelector('#id_googlepay').value);
                 let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totaldprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostpetrolprice').value=a-tp;
 
-                document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
             }
         })
     </script>
@@ -742,10 +734,24 @@ from django.db.models import Sum
                 let card =parseInt(document.querySelector('#id_card').value);
                 let googlepay =parseInt(document.querySelector('#id_googlepay').value);
                 let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totaldprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
 
-                document.querySelector('#id_lostdieselprice').value=a-tp;
+                console.log("inside paytm");
+                console.log(document.querySelector("#lostdiesel").style.display);
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostpetrolprice').value=a-tp;
+
+                }
+
             }
         })
     </script>
@@ -758,10 +764,20 @@ from django.db.models import Sum
                 let card =parseInt(document.querySelector('#id_card').value);
                 let googlepay =parseInt(document.querySelector('#id_googlepay').value);
                 let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totaldprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostpetrolprice').value=a-tp;
 
-                document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
 
             }
         })
@@ -775,10 +791,20 @@ from django.db.models import Sum
                 let card =parseInt(document.querySelector('#id_card').value);
                 let googlepay =parseInt(document.querySelector('#id_googlepay').value);
                 let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totaldprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostpetrolprice').value=a-tp;
 
-                document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
             }
         })
     </script>
@@ -791,10 +817,20 @@ from django.db.models import Sum
                 let card =parseInt(document.querySelector('#id_card').value);
                 let googlepay =parseInt(document.querySelector('#id_googlepay').value);
                 let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totaldprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+                      let a=cash+paytm+phonepay+card+googlepay+camount
+                      document.querySelector('#id_lostpetrolprice').value=a-tp;
 
-                document.querySelector('#id_lostdieselprice').value=a-tp;
+                }
             }
         })
     </script>
@@ -802,102 +838,7 @@ from django.db.models import Sum
 
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded',function (){
-            document.querySelector('#id_phonepay').onfocusout=function (){
-                let cash =parseInt(document.querySelector('#id_cash').value);
-                let paytm =parseInt(document.querySelector('#id_paytm').value);
-                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
-                let card =parseInt(document.querySelector('#id_card').value);
-                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
-                let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totalpprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
 
-                document.querySelector('#id_lostpetrolprice').value=a-tp;
-            }
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',function (){
-            document.querySelector('#id_cash').onfocusout=function (){
-                let cash =parseInt(document.querySelector('#id_cash').value);
-                let paytm =parseInt(document.querySelector('#id_paytm').value);
-                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
-                let card =parseInt(document.querySelector('#id_card').value);
-                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
-                let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totalpprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
 
-                document.querySelector('#id_lostpetrolprice').value=a-tp;
-            }
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',function (){
-            document.querySelector('#id_paytm').onfocusout=function (){
-                let cash =parseInt(document.querySelector('#id_cash').value);
-                let paytm =parseInt(document.querySelector('#id_paytm').value);
-                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
-                let card =parseInt(document.querySelector('#id_card').value);
-                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
-                let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totalpprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
-
-                document.querySelector('#id_lostpetrolprice').value=a-tp;
-            }
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',function (){
-            document.querySelector('#id_card').onfocusout=function (){
-                let cash =parseInt(document.querySelector('#id_cash').value);
-                let paytm =parseInt(document.querySelector('#id_paytm').value);
-                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
-                let card =parseInt(document.querySelector('#id_card').value);
-                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
-                let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totalpprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
-
-                document.querySelector('#id_lostpetrolprice').value=a-tp;
-
-            }
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',function (){
-            document.querySelector('#id_googlepay').onfocusout=function (){
-                let cash =parseInt(document.querySelector('#id_cash').value);
-                let paytm =parseInt(document.querySelector('#id_paytm').value);
-                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
-                let card =parseInt(document.querySelector('#id_card').value);
-                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
-                let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totalpprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
-
-                document.querySelector('#id_lostpetrolprice').value=a-tp;
-            }
-        })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',function (){
-            document.querySelector('#id_creditoramount').onfocusout=function (){
-                let cash =parseInt(document.querySelector('#id_cash').value);
-                let paytm =parseInt(document.querySelector('#id_paytm').value);
-                let phonepay =parseInt(document.querySelector('#id_phonepay').value);
-                let card =parseInt(document.querySelector('#id_card').value);
-                let googlepay =parseInt(document.querySelector('#id_googlepay').value);
-                let camount =parseInt(document.querySelector('#id_creditoramount').value);
-                let tp=parseInt(document.querySelector('#id_totalpprice').value);
-                let a=cash+paytm+phonepay+card+googlepay+camount
-
-                document.querySelector('#id_lostpetrolprice').value=a-tp;
-            }
-        })
-    </script>
 
 {% endblock %}

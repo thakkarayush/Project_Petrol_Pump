@@ -5,6 +5,7 @@ urlpatterns=[
     path("view/",ListRateView.as_view(),name="rate-view"),
     path("update/<int:pk>",UpdateRateView.as_view(),name="rate-update"),
     path("delete/<int:pk>",DeleteRateView.as_view(),name="rate-delete"),
+    path("detail/<int:pk>",DetailRateView.as_view(),name="rate-detail"),
     path("petrolprice/",petrol_same_date_rate,name="petrol-price"),
     path("dieselprice/",diesel_same_date_rate,name="diesel-price")
 ]

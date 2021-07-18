@@ -1,11 +1,10 @@
 {% extends "user/layout.html" %}
-{% block body %}
 {% load static %}
-    <h1> Are you sure you want to delete ?</h1>
-    <form method="post">
-    {% csrf_token %}
-        <div class="col-sm-3">
-     <div class="card profile-card">
+{% load crispy_forms_field %}
+{% block body %}
+
+<div class="col-sm-3">
+                    <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
                         <div class="profile-body">
                             <div class="image-area">
@@ -22,42 +21,32 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="card card-about-me">
-
                         <div class="body">
-
                                 <div class="col-sm-3">
                                     <div class="title">
-                                        <b>Date</b>
+                                        <i class="material-icons"></i><b>
+                                        Nozzel Number</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.date }}
+                                        {{ object.nozzel_no }}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>
-                                        Petrol Price</b>
+                                        Type</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.petrol_price }}
+                                        {{ object.type }}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>
-                                        Diesel Price</b>
+                                        Remark</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.diesel_price }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i><b>
-                                        Oil Price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.oil_rate }}
+                                        {{ object.remark }}
                                     </div>
                                 </div>
 
@@ -65,7 +54,4 @@
                         </div>
                     </div>
                 </div>
-        <input type="submit" value="delete" class="btn btn-danger">
-        <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
-    </form>
 {% endblock %}

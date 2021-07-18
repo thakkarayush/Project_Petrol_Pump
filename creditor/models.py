@@ -24,6 +24,6 @@ class creditor_master(models.Model):
     pendingbalance=models.IntegerField(default=0)
     creationdate = models.DateField(default=datetime.utcnow)
     def __str__(self):
-        return f"{self.id}-{self.fname}"
+        return f"{self.lname}-{self.fname}"
     def get_absolute_url(self):
         return reverse('creditor-view')

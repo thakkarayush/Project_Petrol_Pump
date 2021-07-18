@@ -1,13 +1,61 @@
 {% extends "user/layout.html" %}
+{% load static %}
 {% block body %}
     <h1> Are you sure you want to delete ?</h1>
     <form method="post">
     {% csrf_token %}
-     <ul>
-        <li> nozzel_no : {{ object.nozzel_no }}</li>
-        <li> type :{{ object.type }}</li>
-        <li> remark : {{ object.remark }}</li>
-     </ul>
+
+<div class="col-sm-3">
+                    <div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.designation }}</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="card card-about-me">
+                        <div class="body">
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i><b>
+                                        Nozzel Number</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.nozzel_no }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i><b>
+                                        Type</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.type }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i><b>
+                                        Remark</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.remark }}
+                                    </div>
+                                </div>
+
+                            <br><br><br><br>
+                        </div>
+                    </div>
+                </div>
         <input type="submit" value="delete" class="btn btn-danger">
         <a href="{% url 'nozzel-view' %}" class="btn btn-info" >cancel </a>
     </form>

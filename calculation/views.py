@@ -8,16 +8,19 @@ from datetime import datetime
 class NewcalcmasterView(CreateView):
     model = calcmasters
     fields = '__all__'
-    extra_context = { "totalpetrol":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('totalpetrol'))['totalpetrol__sum'],
-                      "totaldiesel":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('totaldiesel'))['totaldiesel__sum'],
-                      "closinglitpetrol":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('closinglitpetrol'))['closinglitpetrol__sum'],
-                      "openinglitpetrol":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('openinglitpetrol'))['openinglitpetrol__sum'],
-                      "closinglitdiesel":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('closinglitdiesel'))['closinglitdiesel__sum'],
-                      "openinglitdiesel":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('openinglitdiesel'))['openinglitdiesel__sum'],
-                      "lostpetrol":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('lostpetrol'))['lostpetrol__sum'],
-                      "lostdiesel":ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('lostdiesel'))['lostdiesel__sum']
-                      }
 
+
+    def get_context_data(self, **kwargs):
+        ctx = super(NewcalcmasterView, self).get_context_data(**kwargs)
+        ctx["totalpetrol"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('totalpetrol'))['totalpetrol__sum']
+        ctx["totaldiesel"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('totaldiesel'))['totaldiesel__sum']
+        ctx["closinglitpetrol"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('closinglitpetrol'))['closinglitpetrol__sum']
+        ctx["openinglitpetrol"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('openinglitpetrol'))['openinglitpetrol__sum']
+        ctx["closinglitdiesel"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('closinglitdiesel'))['closinglitdiesel__sum']
+        ctx["openinglitdiesel"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('openinglitdiesel'))['openinglitdiesel__sum']
+        ctx["lostpetrol"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('lostpetrol'))['lostpetrol__sum']
+        ctx["lostdiesel"] = ntransaction.objects.filter(date=datetime.utcnow().date()).aggregate(Sum('lostdiesel'))['lostdiesel__sum']
+        return ctx
 
 #model_form.html
 

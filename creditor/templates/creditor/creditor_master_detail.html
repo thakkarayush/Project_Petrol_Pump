@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block body %}
-
+<div class="col-sm-3">
                     <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
                         <div class="profile-body">
@@ -16,80 +16,87 @@
                             </div>
                         </div>
                         <div class="profile-footer">
-                            <ul>
-                                <li>
+                            
+                                <ul>
+                                    <li>
                                     <span>Address: -</span><span>{{ object.block }} {{ object.street }}, {{ object.area }}, {{ object.city }}, {{ object.state }}, {{ object.country }} </span>
                                 </li>
-                                <li>
+                                    <li>
+
                                     <span>contact:</span><span>Phone no.: -{{ object.mobile }}  telephone: -{{ object.officeno }}</span>
                                 </li>
+                                </ul>
 
-                            </ul>
 
                         </div>
                     </div>
+</div>
+    <div class="col-sm-9">
 
                     <div class="card card-about-me">
 
                         <div class="body">
-                            <ul>
-                                <li>
+                            
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Contact person name
+                                        <i class="material-icons"></i>
+                                        <b>Contact person name</b>
                                     </div>
                                     <div class="content">
                                         {{ object.contactpersonname }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">location_on</i>
-                                        Contact person Mobile
+                                        <i class="material-icons"></i>
+                                        <b>Contact person Mobile</b>
                                     </div>
                                     <div class="content">
                                         {{ object.contactpersonmobile }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        Home no.
+                                        <i class="material-icons"></i>
+                                        <b>Home no.</b>
                                     </div>
                                     <div class="content">
                                        {{ object.homeno }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        GST number
+                                        <b>GST number</b>
                                     </div>
                                     <div class="content">
                                         {{ object.gstno }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Pending Balance
+                                        <b>Pending Balance</b>
                                     </div>
                                     <div class="content">
                                         {{ object.pendingbalance }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Creation Date
+                                        <b>Creation Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.creationdate }}
                                     </div>
-                                </li>
+                                </div>
 
 
-
-                            </ul>
+                            <br><br><br><br><br>
+                            
                         </div>
                     </div>
+    </div>
 {% endblock %}

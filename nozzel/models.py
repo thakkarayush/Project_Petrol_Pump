@@ -6,7 +6,7 @@ class nozzel_master(models.Model):
 
     nozzel_no=models.CharField(max_length=30)
     type=models.CharField(choices=choices,default='petrol',max_length=30)
-    remark=models.CharField(max_length=30)
+    remark=models.CharField(max_length=30,blank=True,null=True)
 
     def __str__(self):
         return f"nozzel_no({self.nozzel_no})-type({self.type})"

@@ -59,15 +59,21 @@
                                         {{ object.fuel_type }}
                                     </div>
                                 </div>
+
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>
                                         Remarks</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.remarks }}
+                                        {% if object.remarks is not  None %}
+
+                                             {{ object.remarks }}
+
+                                        {% endif %}
                                     </div>
                                 </div>
+
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>

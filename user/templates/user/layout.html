@@ -36,9 +36,10 @@
     <link href="{% static 'css/themes/all-themes.css'%}" rel="stylesheet" />
     {% block extra_css %}
     {% endblock %}
+
 </head>
 
-<body class="theme-red">
+<body class="theme-red" style="background-image: url('{% static 'Untitled.png' %} ')" >
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -734,28 +735,30 @@
         </aside>
         <!-- #END# Right Sidebar -->
     </section>
-    <section class="content">
-        <div class="container-fluid">
+    <section class="content" >
+        <div class="container-fluid" >
              {% block body %}
 
-                <div class="block-header">
+                <div class="block-header" >
                     <h2>BLANK PAGE</h2>
                 </div>
              {% endblock %}
 
         </div>
     </section>
-    <!-- Jquery Core Js -->
-    <script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
 
+    {% block menu_js %}
+    <!-- Jquery Core Js -->
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+{% endblock %}
     <!-- Bootstrap Core Js -->
     <script src="{% static 'plugins/bootstrap/js/bootstrap.js'%}"></script>
 
     <!-- Select Plugin Js -->
     <script src="{% static 'plugins/bootstrap-select/js/bootstrap-select.js'%}"></script>
 
-    <!-- Slimscroll Plugin Js -->
-    <script src="{% static 'plugins/jquery-slimscroll/jquery.slimscroll.js'%}"></script>
+{#    <!-- Slimscroll Plugin Js -->#}
+{#    <script src="{% static 'plugins/jquery-slimscroll/jquery.slimscroll.js'%}"></script>#}
 
     <!-- Waves Effect Plugin Js -->
     <script src="{% static 'plugins/node-waves/waves.js'%}"></script>
@@ -787,6 +790,7 @@
     <!-- Demo Js -->
    {% comment %} <script src="{% static 'js/demo.js'%}"></script>{% endcomment %}
     {% block extra_js %}
+
     {% endblock %}
 </body>
 

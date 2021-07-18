@@ -12,8 +12,11 @@ class NewRateView(CreateView):
 
 class ListRateView(ListView):
     model = rate
+    ordering = ['-date']
     context_object_name = 'rates'
     template_name = 'rates/list.html'
+
+
 #model_list.html
 class UpdateRateView(UpdateView):
     model = rate

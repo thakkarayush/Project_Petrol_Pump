@@ -7,7 +7,7 @@ from datetime import datetime
 class ntransaction(models.Model):
     date=models.DateField(default=datetime.utcnow)
     nozzelid = models.ForeignKey(nozzel_master, on_delete=models.CASCADE, related_name="payment")
-    amount = models.FloatField()
+    amount = models.FloatField(blank=True, null=True)
 
     bankname = models.CharField(max_length=20, blank=True, null=True)
     branchname = models.CharField(max_length=20, blank=True, null=True)

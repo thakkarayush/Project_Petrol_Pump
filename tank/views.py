@@ -18,7 +18,7 @@ class UpdateTankView(UpdateView):
 
 class DeleteTankView(DeleteView):
     model = tank_master
-    success_url = '/tank_masters/view'
+    success_url = '/tank/view'
 #model_confirm_delete.html
 class DetailTankView(DetailView):
     model = tank_master

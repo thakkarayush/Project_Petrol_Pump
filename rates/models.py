@@ -16,3 +16,4 @@ class rate(models.Model):
 
     def get_absolute_url(self):
         return reverse('rate-view')
+

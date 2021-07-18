@@ -8,6 +8,9 @@
     <link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
+    <div class="header" >
+                     <center><h2>Tank Master Table</h2></center>
+                    </div>
 
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="example">
                                     <thead>
@@ -54,6 +57,7 @@
                                        <th>
                                            <a href="{% url 'Tank-update'  value.id %}" class="btn btn-info"> update</a>
                                            <a href="{% url 'Tank-delete'  value.id %}" class="btn btn-danger"> Delete</a>
+                                           <a href="{% url 'Tank-detail'  value.id %}" class="btn btn-success waves-effect"> Detail</a>
                                        </th>
 
                                        </tr>
