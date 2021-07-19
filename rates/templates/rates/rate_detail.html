@@ -4,21 +4,21 @@
 {% block body %}
 
 <div class="col-sm-3">
-                    <div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
-                        <div class="profile-body">
+                <div class="card profile-card">
+
+
                             <div class="image-area">
-                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'IndianOilLogo100x100 (1).jpg' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
-                                <p>{{ object.designation }}</p>
+                                <p>{{ object.companyname }}</p>
 
                             </div>
-                        </div>
 
-                    </div>
                 </div>
+    </div>
                 <div class="col-sm-9">
                     <div class="card card-about-me">
 
@@ -32,6 +32,7 @@
                                         {{ object.date }}
                                     </div>
                                 </div>
+                            {% block pr %}
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>
@@ -41,6 +42,8 @@
                                         {{ object.petrol_price }}
                                     </div>
                                 </div>
+                                {% endblock %}
+                                {% block dr %}
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>
@@ -50,6 +53,7 @@
                                         {{ object.diesel_price }}
                                     </div>
                                 </div>
+                                {% endblock %}
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i><b>

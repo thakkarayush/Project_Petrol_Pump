@@ -834,6 +834,27 @@ from django.db.models import Sum
             }
         })
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function (){
+            document.querySelector('#id_amount').onfocusin=function (){
+                if( document.querySelector("#lostdiesel").style.display=='block')
+                {
+                    console.log("inside if");
+                      let tp=parseInt(document.querySelector('#id_totaldprice').value);
+
+                      document.querySelector('#id_amount').value=tp;
+                }
+                else
+                {
+                    let tp=parseInt(document.querySelector('#id_totalpprice').value);
+
+                      document.querySelector('#id_amount').value=tp;
+
+                }
+            }
+        })
+
+    </script>
 
 
 

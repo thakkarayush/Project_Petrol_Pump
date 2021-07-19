@@ -7,8 +7,7 @@
     <link href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
 {% endblock %}
-{% block menu_js %}
-{% endblock %}
+
 {% block body %}
                             <table  id="example">
                                     <thead>
@@ -45,6 +44,8 @@
                                   {% endfor %}
                                   </tbody>
                             </table>
+{% endblock %}
+{% block menu_js %}
 {% endblock %}
 {% block extra_js %}
 {% include "user/extra_js.html" %}

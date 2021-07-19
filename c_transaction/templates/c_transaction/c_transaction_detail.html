@@ -1,20 +1,23 @@
 {% extends "user/layout.html" %}
 {% load static %}
 {% load crispy_forms_field %}
+
+
 {% block body %}
    <div class="col-sm-3">
                 <div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
-                        <div class="profile-body">
+
+
                             <div class="image-area">
-                                <img src="{% static 'img.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'IndianOilLogo100x100 (1).jpg' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
                                 <p>{{ object.companyname }}</p>
 
                             </div>
-                        </div>
+
                 </div>
     </div>
     <div class="col-sm-9">
@@ -23,7 +26,7 @@
 
                         <div class="body">
                             
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="fa fa-birthday-cake"></i>
                                         <b>Date</b>
@@ -32,7 +35,7 @@
                                         {{ object.date }}
                                     </div>
                                 </div >
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
                                         <b>vehicle id</b>
@@ -41,7 +44,8 @@
                                         {{ object.vehicle_id }}
                                     </div>
                                 </div >
-                                <div class="col-sm-3">
+
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
                                         <b>Nozzel Id</b>
@@ -50,7 +54,25 @@
                                        {{ object.nozzel }}
                                     </div>
                                 </div >
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Driver Name</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.drivername }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Company Name</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.companyname }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
                                         <b>Petrol in liters</b>
@@ -59,7 +81,25 @@
                                         {{ object.petrolinlit }}
                                     </div>
                                 </div >
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Petrol Price</b>
+                                    </div>
+                                    <div class="content">
+                                       {{ object.petrolrates }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Petrol Total Price</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.petrolprice }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
                                         <b>Diesel in liters</b>
@@ -68,16 +108,16 @@
                                         {{ object.dieselinlit }}
                                     </div>
                                 </div >
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>Petrol Price</b>
+                                        <b>Diesel Rates</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.petrolprice }}
+                                        {{ object.dieselrates }}
                                     </div>
                                 </div >
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
                                         <b>Diesel Price</b>
@@ -86,8 +126,28 @@
                                         {{ object.dieselprice }}
                                     </div>
                                 </div >
+                                <div class="col-sm-6">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Sign</b>
+                                    </div>
+                                    <div class="content">
+
+                                    </div>
+                                </div >
+                            <br>
+                                <div class="col-sm-6 ">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Stamp</b>
+                                    </div>
+                                    <div class="content">
+
+                                    </div>
+                                </div >
 
 
+<br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br>
 
                         </div>

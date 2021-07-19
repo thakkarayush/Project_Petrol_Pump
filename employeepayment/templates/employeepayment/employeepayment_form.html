@@ -196,6 +196,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-float" >
+                                        <label class="form-label">Remark</label>
+                                    <div class="form-line">
+                                        {% crispy_field form.remarks %}
+                                         {% if form.remarks.errors %}
+                                            {% for error in form.remarks.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>

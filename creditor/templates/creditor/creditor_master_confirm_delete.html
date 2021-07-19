@@ -4,17 +4,22 @@
     <form method="post">
     {% csrf_token %}
     <div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
-                        <div class="profile-body">
+
+                <div class="card profile-card">
+
+
                             <div class="image-area">
-                                <img src="C:\Users\ayush\OneDrive\Desktop\Ayush\AyushPhoto.jpg" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'IndianOilLogo100x100 (1).jpg' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
                                 <p>{{ object.companyname }}</p>
 
                             </div>
-                        </div>
+
+                </div>
+
                         <div class="profile-footer">
                             <ul>
                                 <li>

@@ -13,6 +13,10 @@ class c_transaction(models.Model):
     petrolprice=models.FloatField(null=True,blank=True)
     dieselprice=models.FloatField(null=True,blank=True)
     nozzel=models.ForeignKey(nozzel_master, on_delete=models.CASCADE, related_name='nozzel')
+    petrolrates=models.FloatField(null=True,blank=True)
+    dieselrates=models.FloatField(null=True,blank=True)
+    drivername=models.CharField(max_length=20,null=True,blank=True)
+    companyname=models.CharField(max_length=20,null=True,blank=True)
 
     def __str__(self):
         return f"{self.date}-{self.vehicle_id}"
