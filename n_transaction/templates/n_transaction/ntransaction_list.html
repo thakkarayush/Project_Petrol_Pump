@@ -36,7 +36,7 @@
                                         {% for value in ntransactions %}
                                             <tr>
 
-                                              <td>{{ value.date }}</td>
+                                              <td data-sort="{{ value.date|date:"Ymd" }}"> {{ value.date | date:"d-m-Y" }} </td>
                                               <td>{{ value.nozzelid }}</td>
                                               <td>{{ value.amount}}</td>
 

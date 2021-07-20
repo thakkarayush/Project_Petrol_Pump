@@ -40,7 +40,7 @@
                                    <tbody>
                                    {% for supplierdetail in supplierdetails %}
                                        <tr>
-                                        <td>{{ supplierdetail.date }}</td>
+                                        <td data-sort="{{ supplierdetail.date|date:"Ymd" }}"> {{ supplierdetail.date | date:"d-m-Y" }} </td>
                                         <td>{{ supplierdetail.receipt_no }}</td>
                                         <td>{{ supplierdetail.petrolbefore }}</td>
                                         <td>{{ supplierdetail.dieselbefore }}</td>

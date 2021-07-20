@@ -45,7 +45,7 @@
                                    <tbody>
                                    {% for calcmaster in calcmasters %}
                                        <tr>
-                                        <td>{{ calcmaster.date }}</td>
+                                        <td data-sort="{{ calcmaster.date|date:"Ymd" }}"> {{ calcmaster.date | date:"d-m-Y" }} </td>
                                         <td>{{ calcmaster.ptank_open }}</td>
                                         <td>{{ calcmaster.ptank_close }}</td>
                                         <td>{{ calcmaster.dtank_open }}</td>
