@@ -43,3 +43,16 @@ def get_petrol_amount_by_month_chart(request):
         data['values'].append(ex['no_of_ad'])
         print(data)
     return JsonResponse(data)
+
+def get_diesel_amount_by_month_chart(request):
+    from django.db.models import Sum
+    from datetime import datetime
+    from calculation.models import calcmasters
+    result = calcmasters.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+        no_of_ad1=Sum('totaldiesel'))
+    data1 = {'label': [], 'values': []}
+    for ex in result:
+        data1['label'].append(datetime.strftime(ex['month'], '%B'))
+        data1['values'].append(ex['no_of_ad1'])
+        print(data1)
+    return JsonResponse(data1)

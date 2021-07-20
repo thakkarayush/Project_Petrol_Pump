@@ -85,7 +85,7 @@
                 </div>
             </div>
             <!-- #END# Widgets -->
-            <!-- Bar Char Usage -->
+            <!-- Bar Char Petrol Usage -->
 
             <div class=" col-12 col-xs-12">
                     <div class="card">
@@ -110,6 +110,30 @@
                     </div>
                 </div>
             <!-- #END# bar chart Usage -->
+            <!--Bar Data Diesel-->
+            <div class=" col-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>BAR CHART</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                            <canvas id="bar_chart1" height="481" width="962" style="display: block; width: 770px; height: 385px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            <!--Bar data end-->
             <div class="row clearfix">
                 <!-- Visitors -->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -417,8 +441,8 @@
 
       } )
 
-      {% comment %} // for payments chart
-      fetch("{% url 'get-amount-month-chart' %}")
+       // for payments chart
+      fetch("http://127.0.0.1:8000/get_diesel_amount_by_month/")
       .then(response => response.json())
       .then(data => {
           var areaChartData = {
@@ -441,7 +465,7 @@
      //-------------
     //- BAR CHART -
     //-------------
-    var barChartCanvas = $('#payment-chart').get(0).getContext('2d')
+    var barChartCanvas = $('#bar_chart1').get(0).getContext('2d')
     var barChartData = $.extend(true, {}, areaChartData)
     var temp0 = areaChartData.datasets[0]
     barChartData.datasets[0] = temp0
@@ -467,7 +491,7 @@
     })
 
       } )
-
+{% comment %}
         // for pending fees chart
       fetch("{% url 'get-task-due-date' %}")
       .then(response => response.json())
@@ -525,4 +549,6 @@
   })
 </script>
 
+{% endblock %}
+{% block menu_js %}
 {% endblock %}

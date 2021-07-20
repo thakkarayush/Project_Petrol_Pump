@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from user.views import home
+from user.views import home, get_diesel_amount_by_month_chart
 from django.contrib.auth.views import LoginView,LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -40,7 +40,8 @@ urlpatterns = [
     path("calcmaster/",include("calculation.urls")),
     path("expenses/",include("expenses.urls"),name="expenses"),
     path("dashboard/",dashboard,name="dashboard"),
-    path("get_petrol_amount_by_month/",get_petrol_amount_by_month_chart,name="get_petrol_amount_by_month")
+    path("get_petrol_amount_by_month/",get_petrol_amount_by_month_chart,name="get_petrol_amount_by_month"),
+    path("get_diesel_amount_by_month/",get_diesel_amount_by_month_chart,name="get_petrol_amount_by_month")
 
 ]
 
