@@ -19,7 +19,8 @@ from user.views import home
 from django.contrib.auth.views import LoginView,LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
-from user.views import dashboard
+from user.views import dashboard,get_petrol_amount_by_month_chart
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',home,name="home-page"),
@@ -37,7 +38,10 @@ urlpatterns = [
     path("employeepayment/",include("employeepayment.urls")),
     path("ntransaction/",include("n_transaction.urls")),
     path("calcmaster/",include("calculation.urls")),
-    path("dashboard/",dashboard,name="dashboard")
+    path("expenses/",include("expenses.urls"),name="expenses"),
+    path("dashboard/",dashboard,name="dashboard"),
+    path("get_petrol_amount_by_month/",get_petrol_amount_by_month_chart,name="get_petrol_amount_by_month")
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

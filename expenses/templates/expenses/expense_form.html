@@ -1,0 +1,322 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block extra_css %}
+<!-- Animation Css -->
+    <link href="{% static 'plugins/animate-css/animate.css'%}" rel="stylesheet" />
+
+    <!-- Sweet Alert Css -->
+    <link href="{% static 'plugins/sweetalert/sweetalert.css'%}" rel="stylesheet" />
+
+      <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="{% static 'plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css'%}" rel="stylesheet" />
+
+    <!-- Bootstrap DatePicker Css -->
+    <link href="{% static 'plugins/bootstrap-datepicker/css/bootstrap-datepicker.css'%}" rel="stylesheet" />
+
+
+{% endblock %}
+{% block body %}
+{#    <div class="block-header">#}
+{#                <h2>#}
+{#                    FORM VALIDATION#}
+{#                    <small>Taken from <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>#}
+{#                </h2>#}
+{#            </div>#}
+            <!-- Basic Validation -->
+                        <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <center><h2>Creditor transaction Entry Form</h2></center>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+
+                            <form id="form_validation" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                        <label class="form-label">Date </label>
+                                    <div class="form-line">
+                                        {% crispy_field form.date 'class' 'datepicker' %}
+                                         {% if form.date.errors %}
+                                            {% for error in form.date.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                            <div class="row clearfix">
+                      <div class="col-sm-4">
+                      <div class="form-group">
+                          <label class="form-label">Tea/Coffee Expense</label>
+                          <div class="form-line">
+                      {% crispy_field form.tea_coffee %}
+                      {% if  form.tea_coffee.errors %}
+                          {% for error in form.tea_coffee.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+                      </div>
+                      </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <label class="form-label">Electricity Bill Expense </label>
+                          <div class="form-line">
+                              {% crispy_field form.electricity 'class' 'electricity' %}
+                              {% if form.electricity.errors %}
+                                  {% for error in form.electricity.errors %}
+                                      <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                  </div>
+                     <div class="col-sm-4">
+                                <div class="form-group">
+                                        <label class="form-label">Water Bill Expense </label>
+                                    <div class="form-line">
+                                        {% crispy_field form.water_bill 'class' 'water_bill' %}
+                                         {% if form.water_bill.errors %}
+                                            {% for error in form.water_bill.errors %}
+                                                <div class="invalid-feedback">
+                                                  {{ error }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                        </div>
+                  <div class="col-sm-4">
+                  <div class="form-group">
+                    <label class="form-label">Stationary Expense</label>
+                    <div class="form-line">
+                      {% crispy_field form.stationary %}
+                        {% if  form.stationary.errors %}
+                            {% for error in form.stationary.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                  </div>
+                      <div class="col-sm-4">
+                    <div class="form-group">
+                    <label class="form-label">Label</label>
+                    <div class="form-line">
+                      {% crispy_field form.labour_expense %}
+                        {% if  form.labour_expense.errors %}
+                            {% for error in form.labour_expense.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                  </div>
+                      <div class="col-sm-4">
+                    <div class="form-group">
+                    <label class="form-label">Tax Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.property_tax %}
+                        {% if  form.property_tax.errors %}
+                            {% for error in form.property_tax.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                      </div>
+                      <div class="col-sm-4">
+                    <div class="form-group ">
+                    <label class="form-label">Maintainence Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.maintainence_expense %}
+                        {% if  form.maintainence_expense.errors %}
+                            {% for error in form.maintainence_expense.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                      </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group ">
+                    <label class="form-label">Machinery Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.machinory_expense %}
+                        {% if  form.machinory_expense.errors %}
+                            {% for error in form.machinory_expense.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                  </div>
+                    <div class="col-sm-4">
+                    <div class="form-group">
+                    <label class="form-label">insurance Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.insurence_expence %}
+                        {% if  form.insurence_expence.errors %}
+                            {% for error in form.insurence_expence.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                    </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                    <label class="form-label">Ruff Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.ruff_expense %}
+                        {% if  form.ruff_expense.errors %}
+                            {% for error in form.ruff_expense.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                    <label class="form-label">Employee Insurance Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.employee_insurance_expense %}
+                        {% if  form.employee_insurance_expense.errors %}
+                            {% for error in form.employee_insurance_expense.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+
+                  </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label class="form-label">Total Amount of Expenses</label>
+                    <div class="form-line">
+                      {% crispy_field form.total_Amount %}
+                        {% if  form.total_Amount.errors %}
+                            {% for error in form.total_Amount.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                    </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                    <label class="form-label">Remark</label>
+                    <div class="form-line">
+                      {% crispy_field form.remark %}
+                        {% if  form.remark.errors %}
+                            {% for error in form.remark.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+
+
+
+                  <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+     </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+{% endblock %}
+{% block extra_js %}
+
+    <!-- Sweet Alert Plugin Js -->
+    <script src="{% static 'plugins/sweetalert/sweetalert.min.js'%}"></script>
+
+    <script src="{% static 'js/pages/forms/form-validation.js'%}"></script>
+
+     <!-- Moment Plugin Js -->
+    <script src="{% static 'plugins/momentjs/moment.js'%}"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="{%  static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js'%}"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'%}"></script>
+<script>
+ $('.datepicker').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
+    });
+</script>
+
+    <script>
+
+        //get the value of total amount of cash
+        document.addEventListener('DOMContentLoaded',function (){
+
+            document.querySelector('#id_total_Amount').onfocusout=function (){
+
+                let tea_coffee=parseInt(document.querySelector('#id_tea_coffee').value);
+                let electricity=parseInt(document.querySelector('#id_electricity').value);
+                let water_bill=parseInt(document.querySelector('#id_water_bill').value);
+                let stationary=parseInt(document.querySelector('#id_stationary').value);
+                let labour_expense=parseInt(document.querySelector('#id_labour_expense').value);
+                let property_tax=parseInt(document.querySelector('#id_property_tax').value);
+                let maintainence_expense=parseInt(document.querySelector('#id_maintainence_expense').value);
+                let machinory_expense=parseInt(document.querySelector('#id_machinory_expense').value);
+                let insurence_expence=parseInt(document.querySelector('#id_insurence_expence').value);
+                let ruff_expense=parseInt(document.querySelector('#id_ruff_expense').value);
+                let employee_insurance_expense=parseInt(document.querySelector('#id_employee_insurance_expense').value);
+
+                let a=(tea_coffee+electricity+water_bill+stationary+labour_expense+property_tax+maintainence_expense+machinory_expense+insurence_expence+ruff_expense+employee_insurance_expense)
+
+                document.querySelector('#id_total_Amount').value=a;
+            }
+        })
+
+    </script>
+
+{% endblock %}

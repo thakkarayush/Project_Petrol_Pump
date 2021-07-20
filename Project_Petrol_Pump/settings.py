@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'calculation',
     'crispy_forms',
     'user',
+    'expenses',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

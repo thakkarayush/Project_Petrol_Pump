@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block extra_css %}
-    <!-- Animation Css -->
+   <!-- Animation Css -->
     <link href="{% static 'plugins/animate-css/animate.css'%}" rel="stylesheet" />
 
     <!-- Sweet Alert Css -->
@@ -121,8 +121,34 @@
             </div>
             <!-- #END# Basic Validation -->
 {% endblock %}
-{% block menu_js %}
-{% endblock %}
+
 {% block extra_js %}
-{% include "user/extra_js.html" %}
+    <!-- Jquery Validation Plugin Css -->
+    <script src="{% static 'plugins/jquery-validation/jquery.validate.js'%}"></script>
+
+    <!-- JQuery Steps Plugin Js -->
+    <script src="{% static 'plugins/jquery-steps/jquery.steps.js'%}"></script>
+
+    <!-- Sweet Alert Plugin Js -->
+    <script src="{% static 'plugins/sweetalert/sweetalert.min.js'%}"></script>
+
+    <script src="{% static 'js/pages/forms/form-validation.js'%}"></script>
+
+     <!-- Moment Plugin Js -->
+    <script src="{% static 'plugins/momentjs/moment.js'%}"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="{%  static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js'%}"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'%}"></script>
+    <script>
+         $('.datepicker').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
+    });
+
+    </script>
 {% endblock %}
