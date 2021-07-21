@@ -14,7 +14,7 @@
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
-                                <p>{{ object.companyname }}</p>
+                                <p><center><b>{{ object.companyname }}</b></center></p>
 
                             </div>
 
@@ -72,6 +72,7 @@
                                         {{ object.companyname }}
                                     </div>
                                 </div >
+                            {% if object.nozzel.type == 'petrol' %}
                                 <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -99,6 +100,7 @@
                                         {{ object.petrolprice }}
                                     </div>
                                 </div >
+                            {% else %}
                                 <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -126,6 +128,7 @@
                                         {{ object.dieselprice }}
                                     </div>
                                 </div >
+                            {% endif %}
                                 <div class="col-sm-6">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -149,19 +152,16 @@
 
 <br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br>
+<div class="row no-print">
+                <div class="col-12" >
+                  <a href="{% url 'print-page' object.id %}" rel="noopener" target="_blank" class="btn btn-default" ><i class="fas fa-print"></i> Print</a>
 
-                        </div>
-                        </div>
-    <div class="row no-print">
-                <div class="col-12">
-                  <a href="{% url 'print-page' object.id %}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                    Payment
-                  </button>
-                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-download"></i> Generate PDF
-                  </button>
+
                 </div>
               </div>
+                        </div>
+
+                        </div>
+
                     </div>
 {% endblock %}

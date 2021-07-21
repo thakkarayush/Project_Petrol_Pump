@@ -8,7 +8,7 @@
 
                             <div class="image-area">
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'IndianOilLogo100x100 (1).jpg' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'img1.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
@@ -36,210 +36,123 @@
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>Nozzel id</b>
+                                        <b>Tea Ccoffee</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.nozzelid }}
+                                        {{ object.tea_coffee }}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>Opening time</b>
+                                        <b>Electricity</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.openingtime }}
+                                        {{ object.electricity }}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>closing time</b>
+                                        <b>Water bill</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.closingtime }}
-                                    </div>
-                                </div>
-                              {% if object.ntransaction.nozzelid == 'petrol' %}
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Opening petrol in liter</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.openinglitpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>closing petrol in lit</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.closinglitpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total petrol</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totalpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total petrol Price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totalpprice }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost Petrol</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost petrol price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostpetrolprice }}
-                                    </div>
-                                </div>
-                               {% else %}
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total Diesel</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totaldiesel }}
+                                        {{ object.water_bill }}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>Total diesel price</b>
+                                        <b>stationarS</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.totaldprice }}
+                                        {{ object.stationary }}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>Opening Diesel in lit</b>
+                                        <b>Labour expense</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.openinglitdiesel }}
+                                        {{ object.labour_expense}}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>closing Diesel in lit</b>
+                                        <b>Property_tax</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.closinglitdiesel }}
+                                        {{ object.property_tax }}
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        <b>Lost Diesel</b>
+                                        <b>Maintainence_expense</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.lostdiesel }}
+                                        {{ object.maintainence_expense}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Machinory_expense</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.machinory_expense }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Insurence_expence</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.insurence_expence }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Ruff_expense</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.ruff_expense }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Employee_insurance_expense</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.employee_insurance_expense}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Total Amount</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.total_Amount }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Remark</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.remark }}
                                     </div>
                                 </div>
 
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost diesel price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostdieselprice }}
-                                    </div>
-                                </div>
-
-                    {% endif %}
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>amount</b>
-                                    </div>
-                                    <div class="content">
-                                       {{ object.amount }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Paytm</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.paytm }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Googlepay</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.googlepay }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Card</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.card }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Phonepay</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.phonepay }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Cash</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.cash }}
-                                    </div>
-                                </div>
-
-
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>creditor Amount</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.amount }}
-                                    </div>
-                                </div>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         </div>
                     </div>
                 </div>

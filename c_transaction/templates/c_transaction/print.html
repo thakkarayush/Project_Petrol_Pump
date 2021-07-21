@@ -27,6 +27,8 @@
     <link href="{% static 'css/themes/all-themes.css'%}" rel="stylesheet" />
     <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'adminlte.min.css/dist/css/adminlte.min.css' %}">
+    <link rel="stylesheet" href="{% static 'adminlte.min.css/plugins/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 </head>
 <body>
 <div class="container-fluid">
@@ -40,7 +42,7 @@
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
-                                <p>{{ object.companyname }}</p>
+                                <p><b><center>{{ object.companyname }}</center></b></p>
 
                             </div>
 
@@ -99,6 +101,7 @@
                                         {{ object.companyname }}
                                     </div>
                                 </div >
+                            {% if object.nozzel.type == 'petrol' %}
                                 <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -126,6 +129,7 @@
                                         {{ object.petrolprice }}
                                     </div>
                                 </div >
+                            {% else %}
                                 <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -153,6 +157,7 @@
                                         {{ object.dieselprice }}
                                     </div>
                                 </div >
+                            {% endif %}
                                 <div class="col-sm-6">
                                     <div class="title">
                                         <i class="material-icons"></i>
